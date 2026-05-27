@@ -1,0 +1,94 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  .section { background: #060f1a; padding: 72px 32px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .eyebrow { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: #378ADD; margin-bottom: 10px; }
+  .headline { font-size: 30px; font-weight: 500; color: #fff; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 12px; max-width: 580px; }
+  .subline { font-size: 14px; color: #5577aa; margin-bottom: 48px; max-width: 480px; line-height: 1.6; }
+  .compare-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 48px; }
+  .compare-card { border-radius: 12px; overflow: hidden; }
+  .compare-header { padding: 14px 20px; font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+  .compare-header.bad { background: #1a0a0a; color: #e24b4a; border: 0.5px solid #3a1515; border-bottom: none; border-radius: 12px 12px 0 0; }
+  .compare-header.good { background: #0a1929; color: #378ADD; border: 0.5px solid #1a3a5c; border-bottom: none; border-radius: 12px 12px 0 0; }
+  .compare-body { border-radius: 0 0 12px 12px; }
+  .compare-body.bad { background: #110808; border: 0.5px solid #3a1515; border-top: none; }
+  .compare-body.good { background: #0d1a27; border: 0.5px solid #1a3a5c; border-top: none; }
+  .compare-row { display: flex; align-items: center; gap: 12px; padding: 13px 20px; border-bottom: 0.5px solid; font-size: 13px; }
+  .compare-body.bad .compare-row { border-color: #2a1010; color: #6a4040; }
+  .compare-body.good .compare-row { border-color: #112233; color: #7a9fc0; }
+  .compare-row:last-child { border-bottom: none; }
+  .icon-x { color: #e24b4a; font-size: 16px; font-weight: 500; flex-shrink: 0; }
+  .icon-check { color: #378ADD; font-size: 16px; font-weight: 500; flex-shrink: 0; }
+  .row-label.good { color: #c0d8f0; }
+  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .stat-card { background: #0d1a27; border: 0.5px solid #1a3a5c; border-radius: 12px; padding: 28px 24px; text-align: center; }
+  .stat-number { font-size: 36px; font-weight: 500; color: #378ADD; letter-spacing: -0.02em; margin-bottom: 6px; }
+  .stat-label { font-size: 13px; color: #5577aa; line-height: 1.5; }
+  .stat-desc { font-size: 11px; color: #2a4055; margin-top: 4px; }
+  .divider-line { width: 40px; height: 2px; background: #378ADD; border-radius: 2px; margin: 0 auto 12px; }
+</style>
+
+<h2 class="sr-only">Why Canadian agents choose MapleCall AI over US tools — comparison section</h2>
+
+<div class="section">
+
+  <div class="eyebrow">Why MapleCall AI</div>
+  <div class="headline">Why Canadian agents choose MapleCall AI over US tools</div>
+  <div class="subline">Every US dialer was built for the American market. MapleCall AI was built from day one for Canada — its laws, its languages, its people.</div>
+
+  <div class="compare-wrap">
+
+    <div class="compare-card">
+      <div class="compare-header bad">
+        <span style="font-size:16px;">✗</span>
+        Other US Dialers
+      </div>
+      <div class="compare-body bad">
+        <div class="compare-row"><span class="icon-x">✗</span><span>CRTC compliance built in</span></div>
+        <div class="compare-row"><span class="icon-x">✗</span><span>French language support</span></div>
+        <div class="compare-row"><span class="icon-x">✗</span><span>Mandarin + Cantonese AI voice</span></div>
+        <div class="compare-row"><span class="icon-x">✗</span><span>Canadian phone numbers</span></div>
+        <div class="compare-row"><span class="icon-x">✗</span><span>Do Not Call list integration</span></div>
+        <div class="compare-row"><span class="icon-x">✗</span><span>Setup in under 24 hours</span></div>
+      </div>
+    </div>
+
+    <div class="compare-card">
+      <div class="compare-header good">
+        <span style="font-size:16px;">✓</span>
+        MapleCall AI
+      </div>
+      <div class="compare-body good">
+        <div class="compare-row"><span class="icon-check">✓</span><span class="row-label good">CRTC compliance built in</span></div>
+        <div class="compare-row"><span class="icon-check">✓</span><span class="row-label good">French language support</span></div>
+        <div class="compare-row"><span class="icon-check">✓</span><span class="row-label good">Mandarin + Cantonese AI voice</span></div>
+        <div class="compare-row"><span class="icon-check">✓</span><span class="row-label good">Canadian phone numbers</span></div>
+        <div class="compare-row"><span class="icon-check">✓</span><span class="row-label good">Do Not Call list integration</span></div>
+        <div class="compare-row"><span class="icon-check">✓</span><span class="row-label good">Setup in under 24 hours</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="divider-line"></div>
+      <div class="stat-number">160,000+</div>
+      <div class="stat-label">Canadian real estate agents</div>
+      <div class="stat-desc">Your entire addressable market</div>
+    </div>
+    <div class="stat-card">
+      <div class="divider-line"></div>
+      <div class="stat-number">21×</div>
+      <div class="stat-label">More likely to convert in 60s</div>
+      <div class="stat-desc">vs. calling 24 hours later</div>
+    </div>
+    <div class="stat-card">
+      <div class="divider-line"></div>
+      <div class="stat-number">$0</div>
+      <div class="stat-label">CRTC fines for our users</div>
+      <div class="stat-desc">Compliance built in, always</div>
+    </div>
+  </div>
+
+</div>

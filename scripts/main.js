@@ -249,6 +249,9 @@
   const feed = document.querySelector('.mockup__feed');
   if (!feed) return;
 
+  // Lock the feed height once so the page never shifts when items swap
+  feed.style.height = feed.offsetHeight + 'px';
+
   const newEntries = [
     {
       label: 'Call Connected',
@@ -282,51 +285,43 @@
   let idx = 0;
 
   function tick() {
-    const entry  = newEntries[idx % newEntries.length];
-    const items  = feed.querySelectorAll('.feed__item');
-    const last   = items[items.length - 1];
+    const entry = newEntries[idx % newEntries.length];
+    const items = feed.querySelectorAll('.feed__item');
+    const last  = items[items.length - 1];
 
-    if (last) {
-      const newItem = document.createElement('div');
-      newItem.className = 'feed__item' + (entry.isSuccess ? ' feed__item--success' : '');
-      newItem.style.opacity = '0';
-      newItem.style.transform = 'translateY(-8px)';
-      newItem.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
-      newItem.innerHTML = `
-        <div class="feed__icon">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-            <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11 21 3 13 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="${entry.iconFill}"/>
-          </svg>
-        </div>
-        <div class="feed__content">
-          <span class="feed__label">${entry.label}</span>
-          <span class="feed__name">${entry.name}</span>
-          <span class="feed__detail">${entry.detail}</span>
-        </div>
-        <span class="feed__status ${entry.statusClass}">${entry.status === 'LIVE' ? '● LIVE' : entry.status}</span>
-      `;
+    // Remove the bottom item FIRST — count stays at 4, height never changes
+    if (last) last.remove();
 
-      // Prepend new item
-      feed.insertBefore(newItem, feed.firstChild);
+    // Build new item (starts invisible)
+    const newItem = document.createElement('div');
+    newItem.className = 'feed__item' + (entry.isSuccess ? ' feed__item--success' : '');
+    newItem.style.cssText = 'opacity:0; transform:translateY(-6px); transition:opacity 0.4s ease, transform 0.4s ease;';
+    newItem.innerHTML = `
+      <div class="feed__icon">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+          <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11 21 3 13 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="${entry.iconFill}"/>
+        </svg>
+      </div>
+      <div class="feed__content">
+        <span class="feed__label">${entry.label}</span>
+        <span class="feed__name">${entry.name}</span>
+        <span class="feed__detail">${entry.detail}</span>
+      </div>
+      <span class="feed__status ${entry.statusClass}">${entry.status === 'LIVE' ? '● LIVE' : entry.status}</span>
+    `;
 
-      // Animate in
+    // Prepend then animate in — two rAFs ensure the initial style is painted first
+    feed.insertBefore(newItem, feed.firstChild);
+    requestAnimationFrame(function () {
       requestAnimationFrame(function () {
-        requestAnimationFrame(function () {
-          newItem.style.opacity = '1';
-          newItem.style.transform = 'translateY(0)';
-        });
+        newItem.style.opacity = '1';
+        newItem.style.transform = 'translateY(0)';
       });
+    });
 
-      // Remove last item if too many
-      if (items.length >= 4) {
-        last.style.opacity = '0';
-        last.style.transition = 'opacity 0.3s ease';
-        setTimeout(function () { last.remove(); }, 320);
-      }
-    }
-
-    // Update stats
-    const callsEl = document.querySelector('.mockup__stat-value:nth-child(1)');
+    // Tick up the calls counter
+    const callsEl = feed.closest('.mockup__body') &&
+                    feed.closest('.mockup__body').querySelector('.mockup__stat-value');
     if (callsEl) {
       const n = parseInt(callsEl.textContent, 10);
       if (!isNaN(n)) callsEl.textContent = n + 1;

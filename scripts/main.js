@@ -203,50 +203,45 @@
 
 // ─── Pricing "Get Started" → smooth scroll + pre-fill form ────
 (function initPricingCTAs() {
-  var ctaBtns   = document.querySelectorAll('.pricing__cta');
+  var ctaBtns  = document.querySelectorAll('.pricing__cta');
   var planInput = document.getElementById('selectedPlan');
   var planPill  = document.getElementById('formPlanPill');
   var planName  = document.getElementById('formPlanName');
   var planClear = document.getElementById('formPlanClear');
-  var demoSection = document.getElementById('demo');
 
-  if (!ctaBtns.length || !planInput || !demoSection) return;
+  if (!ctaBtns.length) return;
 
   ctaBtns.forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault();
+    btn.addEventListener('click', function () {
+      // Don't preventDefault — let the global smooth scroll handler
+      // own the actual scrolling to #demo cleanly.
 
       var plan = btn.dataset.plan || '';
 
-      // Set hidden field + show pill
-      planInput.value = plan;
-      if (planName) planName.textContent = plan + ' Plan';
-      if (planPill) planPill.style.display = 'flex';
+      // Pre-fill the plan pill on the form
+      if (planInput) planInput.value = plan;
+      if (planName)  planName.textContent = plan + ' Plan';
+      if (planPill)  planPill.style.display = 'flex';
 
-      // Smooth scroll to demo form
-      var navHeight = 64;
-      var top = demoSection.getBoundingClientRect().top + window.scrollY - navHeight - 16;
-      window.scrollTo({ top: top, behavior: 'smooth' });
-
-      // Briefly highlight the form after scroll
+      // Pulse-highlight the form card after scroll lands (~700ms)
       setTimeout(function () {
         var formWrap = document.querySelector('.cta__form-wrap');
         if (formWrap) {
           formWrap.classList.add('form--highlight');
           setTimeout(function () {
             formWrap.classList.remove('form--highlight');
-          }, 1200);
+          }, 1400);
         }
-      }, 600);
+      }, 700);
     });
   });
 
-  // Clear plan pill
+  // ✕ to clear the selected plan pill
   if (planClear) {
     planClear.addEventListener('click', function () {
-      planInput.value = '';
-      planPill.style.display = 'none';
-      planName.textContent = '';
+      if (planInput) planInput.value = '';
+      if (planPill)  planPill.style.display = 'none';
+      if (planName)  planName.textContent = '';
     });
   }
 })();

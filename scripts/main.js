@@ -61,9 +61,13 @@
     link.addEventListener('click', closeMenu);
   });
 
-  // Close when clicking the dark backdrop (outside the panel)
-  overlay.addEventListener('click', function (e) {
-    if (e.target === overlay) closeMenu();
+  // Close when clicking ANYWHERE outside the panel
+  document.addEventListener('click', function (e) {
+    if (!overlay.classList.contains('open')) return;
+    const panel = overlay.querySelector('.nav__panel');
+    if (!panel.contains(e.target) && !toggle.contains(e.target)) {
+      closeMenu();
+    }
   });
 
   // Close on escape key

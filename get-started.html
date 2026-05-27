@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get started with MapleCall AI — book your free demo and activate your plan." />
+  <meta name="theme-color" content="#060f1a" />
+  <title>Get Started — MapleCall AI</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/get-started.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+</head>
+<body class="gs-page">
+
+  <!-- ── Minimal navbar ── -->
+  <header class="gs-nav">
+    <div class="gs-nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Back to MapleCall AI">
+        <div class="nav__logo-icon">M</div>
+        <span class="nav__logo-text">
+          <span class="nav__logo-maple">Maple</span><span class="nav__logo-call">Call</span> <span class="nav__logo-ai">AI</span>
+        </span>
+      </a>
+      <a href="index.html" class="gs-nav__back">
+        ← Back to home
+      </a>
+    </div>
+  </header>
+
+  <!-- ── Main content ── -->
+  <main class="gs-main">
+    <div class="gs-container">
+
+      <!-- Left — plan summary -->
+      <div class="gs-summary">
+
+        <div class="gs-badge" id="gsPlanBadge">Starter Plan</div>
+
+        <h1 class="gs-title">You're one step away</h1>
+        <p class="gs-subtitle">Book your free 20-minute demo and we'll get your account live within 24 hours.</p>
+
+        <!-- Plan card -->
+        <div class="gs-plan-card" id="gsPlanCard">
+          <div class="gs-plan-header">
+            <div>
+              <span class="gs-plan-name" id="gsPlanName">Starter</span>
+              <span class="gs-plan-tag" id="gsPlanTag">Most popular for solo agents</span>
+            </div>
+            <div class="gs-plan-price">
+              <span class="gs-plan-currency">$</span>
+              <span class="gs-plan-amount" id="gsPlanAmount">199</span>
+              <span class="gs-plan-period">/mo</span>
+            </div>
+          </div>
+          <ul class="gs-plan-features" id="gsPlanFeatures">
+            <!-- filled by JS -->
+          </ul>
+        </div>
+
+        <!-- Trust signals -->
+        <ul class="gs-trust">
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            14-day free trial — no credit card required
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Set up and live in under 24 hours
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            100% CRTC compliant — legally covered
+          </li>
+          <li>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Cancel anytime — no lock-in contracts
+          </li>
+        </ul>
+
+        <p class="gs-switch">
+          Wrong plan?
+          <a href="index.html#pricing" class="gs-switch__link">Go back and compare →</a>
+        </p>
+
+      </div>
+
+      <!-- Right — booking form -->
+      <div class="gs-form-wrap">
+        <div class="gs-form-card">
+
+          <h2 class="gs-form-title">Book your free demo</h2>
+          <p class="gs-form-sub">We'll call you back within 1 business day to confirm.</p>
+
+          <form class="gs-form" id="gsForm"
+                action="https://formspree.io/f/mojbywll"
+                method="POST"
+                novalidate>
+
+            <!-- Hidden plan field -->
+            <input type="hidden" name="plan" id="gsHiddenPlan" value="" />
+
+            <div class="gs-form__row">
+              <div class="gs-form__group">
+                <label class="gs-form__label" for="gsFirstName">First Name</label>
+                <input class="gs-form__input" type="text" id="gsFirstName" name="firstName"
+                       placeholder="James" required autocomplete="given-name" />
+              </div>
+              <div class="gs-form__group">
+                <label class="gs-form__label" for="gsLastName">Last Name</label>
+                <input class="gs-form__input" type="text" id="gsLastName" name="lastName"
+                       placeholder="Kim" autocomplete="family-name" />
+              </div>
+            </div>
+
+            <div class="gs-form__group">
+              <label class="gs-form__label" for="gsEmail">Email Address</label>
+              <input class="gs-form__input" type="email" id="gsEmail" name="email"
+                     placeholder="james@brokerage.ca" required autocomplete="email" />
+            </div>
+
+            <div class="gs-form__group">
+              <label class="gs-form__label" for="gsPhone">Phone Number</label>
+              <input class="gs-form__input" type="tel" id="gsPhone" name="phone"
+                     placeholder="+1 (416) 555-0100" autocomplete="tel" />
+            </div>
+
+            <div class="gs-form__group">
+              <label class="gs-form__label" for="gsMarket">Your Market</label>
+              <select class="gs-form__input gs-form__select" id="gsMarket" name="market">
+                <option value="">Select your city...</option>
+                <option value="toronto">Toronto, ON</option>
+                <option value="vancouver">Vancouver, BC</option>
+                <option value="montreal">Montréal, QC</option>
+                <option value="ottawa">Ottawa, ON</option>
+                <option value="calgary">Calgary, AB</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- Error message -->
+            <p class="gs-form__error" id="gsFormError" style="display:none;">
+              Something went wrong. Please try again or email
+              <a href="mailto:hello@maplecallai.ca">hello@maplecallai.ca</a>.
+            </p>
+
+            <button type="submit" class="btn btn--primary btn--block btn--lg" id="gsSubmitBtn">
+              Book My Free Demo
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+
+            <p class="gs-form__privacy">
+              By submitting, you agree to our
+              <a href="/privacy" class="gs-form__link">Privacy Policy</a>. We'll never spam you.
+            </p>
+          </form>
+
+          <!-- Success state -->
+          <div class="gs-success" id="gsSuccess" aria-live="polite" style="display:none;">
+            <div class="gs-success__icon">✓</div>
+            <h3 class="gs-success__title">You're booked!</h3>
+            <p class="gs-success__text">We'll reach out within 1 business day to confirm your demo time. Talk soon.</p>
+            <a href="index.html" class="btn btn--ghost" style="margin-top:8px;">← Back to home</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ── Footer strip ── -->
+  <footer class="gs-footer">
+    <p>© 2025 MapleCall AI Inc. · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · 🍁 Toronto, Canada</p>
+  </footer>
+
+  <script src="scripts/get-started.js"></script>
+</body>
+</html>

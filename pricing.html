@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="MapleCall AI pricing — simple, transparent plans for Canadian real estate agents. Starter $199, Pro $349, Team $599/month." />
+  <meta name="description" content="MapleCall AI pricing — simple, transparent plans for Canadian real estate agents. Starter $199, Pro $349, Team $599/month. 14-day free trial." />
   <meta name="theme-color" content="#060f1a" />
   <title>Pricing — MapleCall AI</title>
   <link rel="stylesheet" href="styles/main.css" />
@@ -12,29 +12,105 @@
 </head>
 <body class="pr-page">
 
-  <!-- ── Minimal navbar ── -->
-  <header class="gs-nav">
-    <div class="gs-nav__inner">
-      <a href="index.html" class="nav__logo" aria-label="Back to MapleCall AI">
+  <!-- ══════════════════════════════════════
+       NAVBAR — full nav, all links go back
+       to index.html sections
+  ══════════════════════════════════════ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="nav__logo" aria-label="MapleCall AI — Home">
         <div class="nav__logo-icon">M</div>
         <span class="nav__logo-text">
           <span class="nav__logo-maple">Maple</span><span class="nav__logo-call">Call</span> <span class="nav__logo-ai">AI</span>
         </span>
       </a>
-      <a href="index.html" class="gs-nav__back">← Back to home</a>
+
+      <!-- Desktop links -->
+      <nav class="nav__links" aria-label="Site navigation">
+        <a href="index.html#features"    class="nav__link">Features</a>
+        <a href="index.html#how-it-works" class="nav__link">How It Works</a>
+        <a href="index.html#why-us"      class="nav__link">Why Us</a>
+        <a href="pricing.html"           class="nav__link nav__link--active">Pricing</a>
+        <a href="index.html#compliance"  class="nav__link">Compliance</a>
+      </nav>
+
+      <!-- CTA -->
+      <div class="nav__actions">
+        <a href="index.html#demo"         class="btn btn--ghost btn--sm">Log In</a>
+        <a href="get-started.html?plan=pro" class="btn btn--primary btn--sm">Book a Demo</a>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="nav__hamburger" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+
+    <!-- Mobile overlay panel -->
+    <div class="nav__overlay" id="navOverlay" aria-hidden="true">
+      <div class="nav__panel">
+
+        <div class="nav__panel-header">
+          <a href="index.html" class="nav__logo" aria-label="MapleCall AI Home">
+            <div class="nav__logo-icon">M</div>
+            <span class="nav__logo-text">
+              <span class="nav__logo-maple">Maple</span><span class="nav__logo-call">Call</span> <span class="nav__logo-ai">AI</span>
+            </span>
+          </a>
+          <button class="nav__close" id="navClose" aria-label="Close menu">✕</button>
+        </div>
+
+        <nav class="nav__panel-links">
+          <a href="index.html"             class="nav__panel-link">Home              <span class="nav__arrow">→</span></a>
+          <a href="index.html#features"    class="nav__panel-link">Features          <span class="nav__arrow">→</span></a>
+          <a href="index.html#how-it-works" class="nav__panel-link">How It Works     <span class="nav__arrow">→</span></a>
+          <a href="index.html#why-us"      class="nav__panel-link">Why Us            <span class="nav__arrow">→</span></a>
+          <a href="pricing.html"           class="nav__panel-link nav__panel-link--active">Pricing <span class="nav__arrow">→</span></a>
+          <a href="index.html#compliance"  class="nav__panel-link">Compliance        <span class="nav__arrow">→</span></a>
+          <a href="index.html#demo"        class="nav__panel-link">Book a Demo       <span class="nav__arrow">→</span></a>
+        </nav>
+
+        <a href="get-started.html?plan=pro" class="btn btn--primary btn--block nav__panel-cta">Get Started Free →</a>
+
+      </div>
     </div>
   </header>
 
-  <!-- ── Main content ── -->
-  <main class="pr-main">
-    <div class="container">
 
-      <!-- Page header -->
-      <div class="section-header pr-header">
-        <span class="section-label">Pricing</span>
-        <h1 class="section-title">Simple, transparent pricing</h1>
-        <p class="section-desc">No setup fees. No hidden charges. Cancel anytime. All prices in CAD.</p>
+  <!-- ══════════════════════════════════════
+       HERO
+  ══════════════════════════════════════ -->
+  <section class="pr-hero">
+    <div class="container">
+      <span class="pr-hero__badge">Pricing</span>
+      <h1 class="pr-hero__title">Simple, transparent pricing</h1>
+      <p class="pr-hero__sub">No setup fees. No hidden charges. Cancel anytime.<br />All prices in CAD — built for Canadian real estate agents.</p>
+
+      <div class="pr-hero__trust">
+        <span class="pr-trust__item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          14-day free trial
+        </span>
+        <span class="pr-trust__sep">·</span>
+        <span class="pr-trust__item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          No credit card required
+        </span>
+        <span class="pr-trust__sep">·</span>
+        <span class="pr-trust__item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 18L18 6M6 6l12 12" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Cancel anytime
+        </span>
       </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       PRICING CARDS
+  ══════════════════════════════════════ -->
+  <section class="pr-cards">
+    <div class="container">
 
       <!-- Toggle -->
       <div class="pricing__toggle" role="group" aria-label="Billing frequency">
@@ -45,7 +121,7 @@
         </button>
       </div>
 
-      <!-- Pricing grid -->
+      <!-- Cards -->
       <div class="pricing__grid">
 
         <!-- Starter -->
@@ -73,7 +149,7 @@
           <a href="get-started.html?plan=starter" class="btn btn--ghost btn--block">Get Started →</a>
         </div>
 
-        <!-- Pro — highlighted -->
+        <!-- Pro — featured -->
         <div class="pricing__card pricing__card--featured">
           <div class="pricing__popular">Most Popular</div>
           <div class="pricing__header">
@@ -131,35 +207,153 @@
         <a href="mailto:hello@maplecallai.ca" class="pricing__link">Email us</a> — we reply within 1 business day.
       </p>
 
-      <!-- FAQ strip -->
-      <div class="pr-faq">
-        <div class="pr-faq__item">
-          <span class="pr-faq__q">Can I switch plans later?</span>
-          <span class="pr-faq__a">Yes — upgrade or downgrade any time from your dashboard.</span>
-        </div>
-        <div class="pr-faq__item">
-          <span class="pr-faq__q">Do unused calls roll over?</span>
-          <span class="pr-faq__a">No, call credits reset each billing cycle.</span>
-        </div>
-        <div class="pr-faq__item">
-          <span class="pr-faq__q">Is setup included?</span>
-          <span class="pr-faq__a">Yes — we onboard every new customer personally within 24 hours.</span>
-        </div>
-        <div class="pr-faq__item">
-          <span class="pr-faq__q">Is it CRTC compliant?</span>
-          <span class="pr-faq__a">100%. DNCL integration, calling windows, and opt-out are all built in.</span>
-        </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       FAQ
+  ══════════════════════════════════════ -->
+  <section class="pr-faq-section">
+    <div class="container">
+
+      <div class="pr-faq-header">
+        <span class="section-label">FAQ</span>
+        <h2 class="pr-faq-title">Common questions</h2>
       </div>
 
-    </div>
-  </main>
+      <div class="pr-faq-grid">
 
-  <!-- ── Footer ── -->
-  <footer class="gs-footer">
-    <p>© 2025 MapleCall AI Inc. · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · 🍁 Toronto, Canada</p>
+        <div class="pr-faq-card">
+          <div class="pr-faq-card__icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 7h12M8 12h12M8 17h12M4 7h.01M4 12h.01M4 17h.01" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="pr-faq-card__q">Can I switch plans later?</h3>
+          <p class="pr-faq-card__a">Yes — upgrade or downgrade anytime from your dashboard. Changes take effect at the next billing cycle.</p>
+        </div>
+
+        <div class="pr-faq-card">
+          <div class="pr-faq-card__icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="pr-faq-card__q">Do unused calls roll over?</h3>
+          <p class="pr-faq-card__a">No — call credits reset each billing cycle. If you're regularly hitting your limit, we'll recommend upgrading.</p>
+        </div>
+
+        <div class="pr-faq-card">
+          <div class="pr-faq-card__icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="pr-faq-card__q">How fast is onboarding?</h3>
+          <p class="pr-faq-card__a">Most agents go live within 24 hours. We handle setup personally — no technical knowledge required.</p>
+        </div>
+
+        <div class="pr-faq-card">
+          <div class="pr-faq-card__icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="pr-faq-card__q">Is it CRTC compliant?</h3>
+          <p class="pr-faq-card__a">100%. DNCL integration, legal calling windows, mandatory opt-out, and call identification are all built in.</p>
+        </div>
+
+        <div class="pr-faq-card">
+          <div class="pr-faq-card__icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="pr-faq-card__q">What languages are supported?</h3>
+          <p class="pr-faq-card__a">Pro and Team plans include English, French, Mandarin (普通話), and Cantonese (廣東話) — covering most Canadian real estate markets.</p>
+        </div>
+
+        <div class="pr-faq-card">
+          <div class="pr-faq-card__icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="pr-faq-card__q">What support do I get?</h3>
+          <p class="pr-faq-card__a">Starter gets email support. Pro adds priority chat. Team includes a dedicated account manager and SLA guarantee.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       BOTTOM CTA
+  ══════════════════════════════════════ -->
+  <section class="pr-cta">
+    <div class="container">
+      <div class="pr-cta__inner">
+        <div class="pr-cta__text">
+          <h2 class="pr-cta__title">Still not sure which plan fits?</h2>
+          <p class="pr-cta__sub">Book a free 20-minute call. We'll walk through your pipeline and recommend the right setup — no pressure.</p>
+        </div>
+        <div class="pr-cta__actions">
+          <a href="get-started.html?plan=pro" class="btn btn--primary btn--lg">
+            Book a Free Demo
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="mailto:hello@maplecallai.ca" class="btn btn--ghost btn--lg">Email Us Instead</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       FOOTER — full nav links
+  ══════════════════════════════════════ -->
+  <footer class="pr-footer">
+    <div class="container">
+      <div class="pr-footer__inner">
+
+        <!-- Brand -->
+        <div class="pr-footer__brand">
+          <a href="index.html" class="nav__logo pr-footer__logo" aria-label="MapleCall AI Home">
+            <div class="nav__logo-icon">M</div>
+            <span class="nav__logo-text">
+              <span class="nav__logo-maple">Maple</span><span class="nav__logo-call">Call</span> <span class="nav__logo-ai">AI</span>
+            </span>
+          </a>
+          <p class="pr-footer__tagline">AI calling for Canadian real estate agents.</p>
+          <p class="pr-footer__location">🍁 Toronto, Canada</p>
+        </div>
+
+        <!-- Product links -->
+        <div class="pr-footer__col">
+          <span class="pr-footer__heading">Product</span>
+          <a href="index.html#features"     class="pr-footer__link">Features</a>
+          <a href="index.html#how-it-works" class="pr-footer__link">How It Works</a>
+          <a href="index.html#why-us"       class="pr-footer__link">Why Us</a>
+          <a href="pricing.html"            class="pr-footer__link pr-footer__link--active">Pricing</a>
+          <a href="index.html#compliance"   class="pr-footer__link">Compliance</a>
+        </div>
+
+        <!-- Get started links -->
+        <div class="pr-footer__col">
+          <span class="pr-footer__heading">Get Started</span>
+          <a href="get-started.html?plan=starter" class="pr-footer__link">Starter Plan</a>
+          <a href="get-started.html?plan=pro"     class="pr-footer__link">Pro Plan</a>
+          <a href="get-started.html?plan=team"    class="pr-footer__link">Team Plan</a>
+          <a href="index.html#demo"               class="pr-footer__link">Book a Demo</a>
+        </div>
+
+        <!-- Company links -->
+        <div class="pr-footer__col">
+          <span class="pr-footer__heading">Company</span>
+          <a href="mailto:hello@maplecallai.ca" class="pr-footer__link">Contact Us</a>
+          <a href="/privacy"                    class="pr-footer__link">Privacy Policy</a>
+          <a href="/terms"                      class="pr-footer__link">Terms of Service</a>
+        </div>
+
+      </div>
+
+      <div class="pr-footer__bottom">
+        <p>© 2025 MapleCall AI Inc. All rights reserved.</p>
+        <p>100% CRTC compliant · EN · FR · 普通話 · 廣東話</p>
+      </div>
+    </div>
   </footer>
 
-  <!-- Reuse get-started nav/footer styles -->
   <script src="scripts/pricing.js"></script>
 </body>
 </html>

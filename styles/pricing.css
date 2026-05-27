@@ -1,6 +1,5 @@
 /* =============================================================
    MapleCall AI — Pricing Page
-   Reuses main.css pricing cards + get-started.css nav/footer
    ============================================================= */
 
 .pr-page {
@@ -8,55 +7,332 @@
   background: #060f1a;
 }
 
-/* ── Main layout ── */
-.pr-main {
-  padding: 56px 24px 80px;
+/* ── Active nav link ── */
+.nav__link--active {
+  color: #ffffff !important;
 }
 
-/* ── Page header ── */
-.pr-header {
-  margin-bottom: 36px;
+/* ══════════════════════════════════════
+   HERO
+══════════════════════════════════════ */
+.pr-hero {
+  padding: 72px 24px 56px;
+  text-align: center;
+  border-bottom: 0.5px solid #0d1f30;
 }
 
-.pr-header .section-title {
-  font-size: clamp(28px, 5vw, 42px);
+.pr-hero__badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #378ADD;
+  background: rgba(55, 138, 221, 0.1);
+  border: 0.5px solid rgba(55, 138, 221, 0.25);
+  border-radius: 20px;
+  padding: 4px 14px;
+  margin-bottom: 20px;
 }
 
-/* ── FAQ strip ── */
-.pr-faq {
+.pr-hero__title {
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.pr-hero__sub {
+  font-size: 15px;
+  color: #5577aa;
+  line-height: 1.7;
+  max-width: 480px;
+  margin: 0 auto 28px;
+}
+
+.pr-hero__trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 4px;
+}
+
+.pr-trust__item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #5577aa;
+}
+
+.pr-trust__sep {
+  color: #1a3a5c;
+  font-size: 13px;
+  margin: 0 4px;
+}
+
+/* ══════════════════════════════════════
+   PRICING CARDS SECTION
+══════════════════════════════════════ */
+.pr-cards {
+  padding: 56px 24px 48px;
+}
+
+/* ══════════════════════════════════════
+   FAQ SECTION
+══════════════════════════════════════ */
+.pr-faq-section {
+  padding: 56px 24px 64px;
+  border-top: 0.5px solid #0d1f30;
+}
+
+.pr-faq-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pr-faq-title {
+  font-size: clamp(22px, 3.5vw, 30px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-top: 8px;
+}
+
+.pr-faq-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: #0d1f30;
-  border: 0.5px solid #0d1f30;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-top: 48px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.pr-faq__item {
-  background: #060f1a;
-  padding: 22px 24px;
+.pr-faq-card {
+  background: #0d1a27;
+  border: 0.5px solid #1a3a5c;
+  border-radius: 12px;
+  padding: 22px 22px 24px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
+  transition: border-color 0.18s;
 }
 
-.pr-faq__q {
+.pr-faq-card:hover {
+  border-color: rgba(55, 138, 221, 0.4);
+}
+
+.pr-faq-card__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(55, 138, 221, 0.08);
+  border: 0.5px solid rgba(55, 138, 221, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+  flex-shrink: 0;
+}
+
+.pr-faq-card__q {
   font-size: 13px;
   font-weight: 500;
   color: #ffffff;
+  line-height: 1.4;
 }
 
-.pr-faq__a {
+.pr-faq-card__a {
+  font-size: 13px;
+  color: #5577aa;
+  line-height: 1.65;
+}
+
+/* ══════════════════════════════════════
+   BOTTOM CTA
+══════════════════════════════════════ */
+.pr-cta {
+  padding: 64px 24px;
+  border-top: 0.5px solid #0d1f30;
+  background: #060f1a;
+}
+
+.pr-cta__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  background: #0d1a27;
+  border: 0.5px solid #1a3a5c;
+  border-radius: 16px;
+  padding: 40px 44px;
+}
+
+.pr-cta__title {
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.pr-cta__sub {
+  font-size: 14px;
+  color: #5577aa;
+  line-height: 1.65;
+  max-width: 380px;
+}
+
+.pr-cta__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+.pr-footer {
+  border-top: 0.5px solid #0d1f30;
+  padding: 48px 24px 32px;
+  background: #060f1a;
+}
+
+.pr-footer__inner {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto 40px;
+}
+
+.pr-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pr-footer__logo {
+  text-decoration: none;
+}
+
+.pr-footer__tagline {
   font-size: 13px;
   color: #5577aa;
   line-height: 1.6;
 }
 
-/* ── Responsive ── */
+.pr-footer__location {
+  font-size: 12px;
+  color: #3a5570;
+}
+
+.pr-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pr-footer__heading {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.pr-footer__link {
+  font-size: 13px;
+  color: #5577aa;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.pr-footer__link:hover { color: #ffffff; }
+
+.pr-footer__link--active {
+  color: #378ADD;
+}
+
+.pr-footer__bottom {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 0.5px solid #0d1f30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 12px;
+  color: #3a5570;
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media (max-width: 900px) {
+  .pr-faq-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .pr-footer__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 768px) {
-  .pr-faq {
+  .pr-hero {
+    padding: 56px 24px 40px;
+  }
+
+  .pr-trust__sep { display: none; }
+  .pr-hero__trust { flex-direction: column; gap: 10px; }
+
+  .pr-faq-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pr-cta__inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px;
+    align-items: center;
+  }
+
+  .pr-cta__sub {
+    max-width: none;
+  }
+
+  .pr-cta__actions {
+    width: 100%;
+  }
+
+  .pr-cta__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pr-footer__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .pr-footer__bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pr-footer__inner {
     grid-template-columns: 1fr;
   }
 }

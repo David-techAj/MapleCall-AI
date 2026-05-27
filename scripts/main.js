@@ -23,38 +23,47 @@
 })();
 
 
-// ─── Mobile nav toggle ────────────────────────────────────────
+// ─── Mobile nav overlay panel ─────────────────────────────────
 (function initMobileMenu() {
   const toggle  = document.getElementById('navToggle');
-  const mobile  = document.getElementById('navMobile');
-  const links   = document.querySelectorAll('.nav__mobile-link, .nav__mobile .btn');
+  const overlay = document.getElementById('navOverlay');
+  const closeBtn = document.getElementById('navClose');
+  const links   = document.querySelectorAll('.nav__panel-link, .nav__panel-cta');
 
-  if (!toggle || !mobile) return;
+  if (!toggle || !overlay) return;
 
   function openMenu() {
     toggle.classList.add('active');
-    mobile.classList.add('open');
+    overlay.classList.add('open');
     toggle.setAttribute('aria-expanded', 'true');
-    mobile.setAttribute('aria-hidden', 'false');
+    overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
 
   function closeMenu() {
     toggle.classList.remove('active');
-    mobile.classList.remove('open');
+    overlay.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
-    mobile.setAttribute('aria-hidden', 'true');
+    overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }
 
   toggle.addEventListener('click', function () {
-    const isOpen = mobile.classList.contains('open');
+    const isOpen = overlay.classList.contains('open');
     isOpen ? closeMenu() : openMenu();
   });
+
+  // Close button (✕)
+  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
 
   // Close on any link click
   links.forEach(function (link) {
     link.addEventListener('click', closeMenu);
+  });
+
+  // Close when clicking the dark backdrop (outside the panel)
+  overlay.addEventListener('click', function (e) {
+    if (e.target === overlay) closeMenu();
   });
 
   // Close on escape key

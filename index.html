@@ -53,14 +53,34 @@
       </button>
     </div>
 
-    <!-- Dropdown menu -->
-    <div class="nav__mobile" id="navMobile" aria-hidden="true">
-      <a href="#features" class="nav__mobile-link">Features</a>
-      <a href="#how-it-works" class="nav__mobile-link">How It Works</a>
-      <a href="#why-us" class="nav__mobile-link">Why Us</a>
-      <a href="#pricing" class="nav__mobile-link">Pricing</a>
-      <a href="#compliance" class="nav__mobile-link">Compliance</a>
-      <a href="#demo" class="btn btn--primary btn--block">Book a Demo</a>
+    <!-- Overlay menu panel -->
+    <div class="nav__overlay" id="navOverlay" aria-hidden="true">
+      <div class="nav__panel">
+
+        <!-- Panel header: logo + close -->
+        <div class="nav__panel-header">
+          <a href="/" class="nav__logo" aria-label="MapleCall AI Home">
+            <div class="nav__logo-icon">M</div>
+            <span class="nav__logo-text">
+              <span class="nav__logo-maple">Maple</span><span class="nav__logo-call">Call</span> <span class="nav__logo-ai">AI</span>
+            </span>
+          </a>
+          <button class="nav__close" id="navClose" aria-label="Close menu">✕</button>
+        </div>
+
+        <!-- Nav links -->
+        <nav class="nav__panel-links">
+          <a href="#features"    class="nav__panel-link">Features    <span class="nav__arrow">→</span></a>
+          <a href="#how-it-works" class="nav__panel-link">How It Works <span class="nav__arrow">→</span></a>
+          <a href="#why-us"      class="nav__panel-link nav__panel-link--active">Why Us      <span class="nav__arrow">→</span></a>
+          <a href="#pricing"     class="nav__panel-link">Pricing     <span class="nav__arrow">→</span></a>
+          <a href="#compliance"  class="nav__panel-link">Compliance  <span class="nav__arrow">→</span></a>
+        </nav>
+
+        <!-- CTA -->
+        <a href="#demo" class="btn btn--primary btn--block nav__panel-cta">Book a Demo</a>
+
+      </div>
     </div>
   </header>
 

@@ -278,12 +278,14 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
   color: var(--text-sec);
-  padding: 6px 10px;
   margin-left: auto;
   border-radius: var(--radius-sm);
-  border: 0.5px solid transparent;
+  border: 0.5px solid var(--border);
+  background: var(--bg-card);
   transition: color 0.15s, border-color 0.15s, background 0.15s;
   line-height: 1;
   cursor: pointer;
@@ -291,59 +293,125 @@ section {
 }
 .nav__hamburger:hover {
   color: #ffffff;
-  border-color: var(--border);
-  background: rgba(255,255,255,0.04);
+  border-color: var(--text-muted);
+  background: rgba(255,255,255,0.06);
 }
 .nav__hamburger.active {
   color: #ffffff;
-  border-color: var(--border);
-  background: rgba(255,255,255,0.06);
+  border-color: var(--accent);
+  background: rgba(55, 138, 221, 0.1);
 }
 
 /* Hide desktop nav links — hamburger handles all navigation */
 .nav__links  { display: none; }
 .nav__actions { display: none; }
 
-/* Dropdown menu */
-.nav__mobile {
+/* ── Full overlay panel ── */
+.nav__overlay {
   display: none;
-  flex-direction: column;
-  gap: 2px;
-  padding: 12px 20px 20px;
-  border-top: 0.5px solid var(--border-faint);
-  background: rgba(6, 15, 26, 0.98);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  align-items: flex-start;
+  justify-content: flex-end;
 }
-.nav__mobile.open { display: flex; }
+.nav__overlay.open { display: flex; }
 
-.nav__mobile-link {
-  font-size: 14px;
-  color: var(--text-sec);
-  padding: 11px 12px;
-  border-radius: var(--radius-sm);
-  transition: color 0.15s, background 0.15s;
+.nav__panel {
+  width: 100%;
+  max-width: 380px;
+  background: #0d1521;
+  border: 0.5px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+/* Panel header */
+.nav__panel-header {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 0.5px solid var(--border-faint);
 }
-.nav__mobile-link::before {
-  content: '';
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--text-muted);
+
+.nav__close {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--text-sec);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
   flex-shrink: 0;
-  transition: background 0.15s;
 }
-.nav__mobile-link:hover {
+.nav__close:hover {
   color: #ffffff;
-  background: rgba(255,255,255,0.04);
+  border-color: var(--text-muted);
 }
-.nav__mobile-link:hover::before {
-  background: var(--accent);
+
+/* Panel links */
+.nav__panel-links {
+  display: flex;
+  flex-direction: column;
 }
-.nav__mobile .btn { margin-top: 10px; }
+
+.nav__panel-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #c8d8e8;
+  border-bottom: 0.5px solid var(--border-faint);
+  transition: color 0.15s, background 0.15s;
+}
+.nav__panel-link:hover {
+  color: #ffffff;
+  background: rgba(255,255,255,0.03);
+}
+.nav__panel-link--active {
+  color: var(--accent);
+}
+.nav__panel-link--active:hover {
+  color: var(--accent-hover);
+}
+
+.nav__arrow {
+  font-size: 16px;
+  color: var(--text-muted);
+  transition: color 0.15s, transform 0.15s;
+}
+.nav__panel-link:hover .nav__arrow {
+  color: var(--accent);
+  transform: translateX(3px);
+}
+.nav__panel-link--active .nav__arrow {
+  color: var(--accent);
+}
+
+/* CTA */
+.nav__panel-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px;
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+  padding: 14px;
+  width: calc(100% - 32px);
+}
 
 
 /* =============================================================

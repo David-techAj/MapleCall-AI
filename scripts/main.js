@@ -134,20 +134,65 @@
   const btnMonthly = document.getElementById('toggleMonthly');
   const btnAnnual  = document.getElementById('toggleAnnual');
   const amounts    = document.querySelectorAll('.pricing__amount');
+  const savings    = document.querySelectorAll('.pricing__savings');
 
   if (!btnMonthly || !btnAnnual || !amounts.length) return;
 
+  // ── Smooth number count animation ──
+  function animateCount(el, from, to, duration) {
+    var start = null;
+    var fromN = parseInt(from, 10);
+    var toN   = parseInt(to,   10);
+
+    function ease(t) {
+      // ease-out cubic
+      return 1 - Math.pow(1 - t, 3);
+    }
+
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      var elapsed  = timestamp - start;
+      var progress = Math.min(elapsed / duration, 1);
+      var current  = Math.round(fromN + (toN - fromN) * ease(progress));
+      el.textContent = current;
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = toN; // snap to exact final value
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  // ── Show / hide savings notes ──
+  function setSavings(show) {
+    savings.forEach(function (el) {
+      if (show) {
+        var amt = parseInt(el.dataset.savings, 10);
+        var formatted = amt.toLocaleString('en-CA');
+        el.textContent = '🎉 You save $' + formatted + '/yr';
+        el.classList.add('pricing__savings--visible');
+      } else {
+        el.textContent = '';
+        el.classList.remove('pricing__savings--visible');
+      }
+    });
+  }
+
+  // ── Set period with animation ──
   function setPeriod(period) {
     amounts.forEach(function (el) {
-      el.textContent = el.dataset[period];
+      var from = el.textContent;
+      var to   = el.dataset[period];
+      animateCount(el, from, to, 420);
     });
 
-    if (period === 'monthly') {
-      btnMonthly.classList.add('toggle__btn--active');
-      btnAnnual.classList.remove('toggle__btn--active');
-    } else {
+    if (period === 'annual') {
       btnAnnual.classList.add('toggle__btn--active');
       btnMonthly.classList.remove('toggle__btn--active');
+      setSavings(true);
+    } else {
+      btnMonthly.classList.add('toggle__btn--active');
+      btnAnnual.classList.remove('toggle__btn--active');
+      setSavings(false);
     }
   }
 

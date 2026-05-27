@@ -71,8 +71,8 @@
 (function initPricingToggle() {
   var btnMonthly = document.getElementById('toggleMonthly');
   var btnAnnual  = document.getElementById('toggleAnnual');
-  var amounts    = document.querySelectorAll('.pricing__amount');
-  var savings    = document.querySelectorAll('.pricing__savings');
+  var amounts    = document.querySelectorAll('.pr-card__amount');
+  var savings    = document.querySelectorAll('.pr-card__savings');
 
   if (!btnMonthly || !btnAnnual || !amounts.length) return;
 

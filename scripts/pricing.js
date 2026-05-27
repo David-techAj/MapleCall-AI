@@ -99,10 +99,10 @@
       if (show) {
         var amt = parseInt(el.dataset.savings, 10);
         el.textContent = '🎉 You save $' + amt.toLocaleString('en-CA') + '/yr';
-        el.classList.add('pricing__savings--visible');
+        el.style.opacity = '1';
       } else {
         el.textContent = '';
-        el.classList.remove('pricing__savings--visible');
+        el.style.opacity = '0';
       }
     });
   }

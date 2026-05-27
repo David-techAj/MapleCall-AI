@@ -1515,6 +1515,54 @@ section {
   gap: 16px;
 }
 
+/* Plan pre-selection pill */
+.form__plan-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: rgba(55, 138, 221, 0.08);
+  border: 0.5px solid rgba(55, 138, 221, 0.25);
+  border-radius: var(--radius-sm);
+  margin-bottom: 4px;
+  font-size: 12px;
+}
+
+.form__plan-label {
+  color: var(--text-muted);
+}
+
+.form__plan-name {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.form__plan-clear {
+  margin-left: auto;
+  font-size: 11px;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 2px 5px;
+  border-radius: 4px;
+  border: 0.5px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.form__plan-clear:hover {
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* Flash highlight when scrolled to from pricing */
+.form--highlight {
+  animation: formPulse 1.2s ease;
+}
+
+@keyframes formPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(55, 138, 221, 0); }
+  30%  { box-shadow: 0 0 0 4px rgba(55, 138, 221, 0.25); }
+  100% { box-shadow: 0 0 0 0 rgba(55, 138, 221, 0); }
+}
+
 .form__group {
   display: flex;
   flex-direction: column;

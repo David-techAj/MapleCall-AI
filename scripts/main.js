@@ -201,6 +201,57 @@
 })();
 
 
+// ─── Pricing "Get Started" → smooth scroll + pre-fill form ────
+(function initPricingCTAs() {
+  var ctaBtns   = document.querySelectorAll('.pricing__cta');
+  var planInput = document.getElementById('selectedPlan');
+  var planPill  = document.getElementById('formPlanPill');
+  var planName  = document.getElementById('formPlanName');
+  var planClear = document.getElementById('formPlanClear');
+  var demoSection = document.getElementById('demo');
+
+  if (!ctaBtns.length || !planInput || !demoSection) return;
+
+  ctaBtns.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      var plan = btn.dataset.plan || '';
+
+      // Set hidden field + show pill
+      planInput.value = plan;
+      if (planName) planName.textContent = plan + ' Plan';
+      if (planPill) planPill.style.display = 'flex';
+
+      // Smooth scroll to demo form
+      var navHeight = 64;
+      var top = demoSection.getBoundingClientRect().top + window.scrollY - navHeight - 16;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+
+      // Briefly highlight the form after scroll
+      setTimeout(function () {
+        var formWrap = document.querySelector('.cta__form-wrap');
+        if (formWrap) {
+          formWrap.classList.add('form--highlight');
+          setTimeout(function () {
+            formWrap.classList.remove('form--highlight');
+          }, 1200);
+        }
+      }, 600);
+    });
+  });
+
+  // Clear plan pill
+  if (planClear) {
+    planClear.addEventListener('click', function () {
+      planInput.value = '';
+      planPill.style.display = 'none';
+      planName.textContent = '';
+    });
+  }
+})();
+
+
 // ─── Demo form → Formspree (AJAX) ─────────────────────────────
 (function initDemoForm() {
   const form      = document.getElementById('demoForm');

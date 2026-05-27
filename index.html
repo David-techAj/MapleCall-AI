@@ -592,7 +592,7 @@
             <li><span class="feat__check feat__check--muted">—</span> <span class="feat__muted">Analytics dashboard</span></li>
             <li><span class="feat__check feat__check--muted">—</span> <span class="feat__muted">Team accounts</span></li>
           </ul>
-          <a href="#demo" class="btn btn--ghost btn--block">Get Started</a>
+          <a href="#demo" class="btn btn--ghost btn--block pricing__cta" data-plan="Starter">Get Started →</a>
         </div>
 
         <!-- Pro — highlighted -->
@@ -618,7 +618,7 @@
             <li><span class="feat__check">✓</span> Call transcripts &amp; recordings</li>
             <li><span class="feat__check feat__check--muted">—</span> <span class="feat__muted">Team accounts</span></li>
           </ul>
-          <a href="#demo" class="btn btn--primary btn--block">Get Started</a>
+          <a href="#demo" class="btn btn--primary btn--block pricing__cta" data-plan="Pro">Get Started →</a>
         </div>
 
         <!-- Team -->
@@ -643,7 +643,7 @@
             <li><span class="feat__check">✓</span> Call transcripts &amp; recordings</li>
             <li><span class="feat__check">✓</span> Up to 10 agent accounts</li>
           </ul>
-          <a href="#demo" class="btn btn--ghost btn--block">Get Started</a>
+          <a href="#demo" class="btn btn--ghost btn--block pricing__cta" data-plan="Team">Get Started →</a>
         </div>
 
       </div>
@@ -735,6 +735,16 @@
                 action="https://formspree.io/f/mojbywll"
                 method="POST"
                 novalidate>
+
+            <!-- Hidden plan field — set when clicking Get Started -->
+            <input type="hidden" name="plan" id="selectedPlan" value="" />
+
+            <!-- Selected plan pill — shown when a plan is pre-selected -->
+            <div class="form__plan-pill" id="formPlanPill" style="display:none;">
+              <span class="form__plan-label">Selected plan:</span>
+              <span class="form__plan-name" id="formPlanName"></span>
+              <button type="button" class="form__plan-clear" id="formPlanClear" aria-label="Clear plan">✕</button>
+            </div>
 
             <div class="form__group">
               <label class="form__label" for="firstName">First Name</label>

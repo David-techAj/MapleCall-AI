@@ -14,30 +14,29 @@ var PLANS = {
     badge:    'Starter Plan',
     pro:      false,
     features: [
-      '200 AI-powered outbound calls/mo',
-      'English voice agent',
+      '500 outbound calls per month',
+      'English AI voice agent',
       'Automated voicemail drop',
       'Lead follow-up sequences',
-      'CRM sync (HubSpot, Follow Up Boss)',
-      'CRTC-compliant calling windows',
-      '14-day free trial',
+      '1 CRM integration',
+      'CRTC & DNCL compliant',
+      '14-day free trial — no credit card',
     ],
   },
   pro: {
     name:     'Pro',
-    tag:      'Most popular for growing teams',
+    tag:      'Most popular for active agents',
     price:    '349',
     badge:    'Pro Plan',
     pro:      true,
     features: [
-      '600 AI-powered outbound calls/mo',
-      'English + French voice agents',
-      'Multilingual support (Mandarin, Punjabi)',
-      'Smart callback scheduling',
-      'Priority lead routing',
-      'Advanced analytics dashboard',
-      'Dedicated onboarding specialist',
-      '14-day free trial',
+      '2,000 outbound calls per month',
+      'EN · FR · 普通話 · 廣東話 (all 4 languages)',
+      'All CRM integrations',
+      'Full analytics dashboard',
+      'Call transcripts & recordings',
+      'Priority email & chat support',
+      '14-day free trial — no credit card',
     ],
   },
   team: {
@@ -48,23 +47,22 @@ var PLANS = {
     pro:      false,
     features: [
       'Unlimited outbound calls',
-      'All Pro languages + custom voices',
-      'Multi-agent seat management',
-      'White-label calling ID',
-      'API & Zapier integration',
-      'Custom reporting & SLAs',
+      'All 4 languages + custom voice',
+      'Up to 10 agent seats',
       'Dedicated account manager',
-      '14-day free trial',
+      'Custom reporting & SLAs',
+      'API & Zapier integration',
+      '14-day free trial — no credit card',
     ],
   },
 };
 
-// ─── Read plan from URL ────────────────────────────────────────
+// ─── Read plan from URL (default: pro) ───────────────────────
 (function initPlan() {
   var params  = new URLSearchParams(window.location.search);
-  var planKey = (params.get('plan') || 'starter').toLowerCase();
+  var planKey = (params.get('plan') || 'pro').toLowerCase().trim();
 
-  if (!PLANS[planKey]) planKey = 'starter';
+  if (!PLANS[planKey]) planKey = 'pro';
 
   var plan = PLANS[planKey];
 
@@ -72,9 +70,11 @@ var PLANS = {
   var badge = document.getElementById('gsPlanBadge');
   if (badge) badge.textContent = plan.badge;
 
-  // Plan card Pro border
+  // Pro border highlight
   var card = document.getElementById('gsPlanCard');
-  if (card && plan.pro) card.classList.add('gs-plan-card--pro');
+  if (card) {
+    card.classList.toggle('gs-plan-card--pro', plan.pro);
+  }
 
   // Plan name / tag / amount
   var nameEl   = document.getElementById('gsPlanName');
@@ -114,13 +114,12 @@ var PLANS = {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // ── Client-side validation ──
+    // Client-side validation
     var firstNameInput = document.getElementById('gsFirstName');
     var emailInput     = document.getElementById('gsEmail');
-    var required = [firstNameInput, emailInput];
     var valid = true;
 
-    required.forEach(function (input) {
+    [firstNameInput, emailInput].forEach(function (input) {
       if (!input || !input.value.trim()) {
         if (input) {
           input.style.borderColor = '#ef4444';
@@ -135,32 +134,26 @@ var PLANS = {
 
     if (!valid) return;
 
-    // ── Loading state ──
+    // Loading state
     submitBtn.disabled = true;
     submitBtn.innerHTML = 'Sending&hellip;';
     if (errorBox) errorBox.style.display = 'none';
 
-    // ── Submit to Formspree ──
-    var data = new FormData(form);
-
+    // Submit to Formspree
     fetch(form.action, {
       method:  'POST',
-      body:    data,
+      body:    new FormData(form),
       headers: { 'Accept': 'application/json' },
     })
-    .then(function (response) {
-      if (response.ok) {
-        // ── Success ──
+    .then(function (res) {
+      if (res.ok) {
         form.style.display = 'none';
         if (successEl) successEl.style.display = 'flex';
       } else {
-        return response.json().then(function (json) {
-          throw new Error(json.error || 'Submission failed');
-        });
+        return res.json().then(function (j) { throw new Error(j.error || 'failed'); });
       }
     })
     .catch(function () {
-      // ── Error ──
       if (errorBox) errorBox.style.display = 'block';
       submitBtn.disabled = false;
       submitBtn.innerHTML = 'Book My Free Demo <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';

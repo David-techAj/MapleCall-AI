@@ -728,7 +728,11 @@
         </div>
 
         <div class="cta__form-wrap">
-          <form class="cta__form" id="demoForm" novalidate>
+          <form class="cta__form" id="demoForm"
+                action="https://formspree.io/f/mojbywll"
+                method="POST"
+                novalidate>
+
             <div class="form__group">
               <label class="form__label" for="firstName">First Name</label>
               <input class="form__input" type="text" id="firstName" name="firstName" placeholder="James" required autocomplete="given-name" />
@@ -753,12 +757,19 @@
                 <option value="other">Other</option>
               </select>
             </div>
-            <button type="submit" class="btn btn--primary btn--block btn--lg">
+
+            <!-- Error message (shown on Formspree failure) -->
+            <p class="form__error" id="formError" aria-live="polite" style="display:none;">
+              Something went wrong. Please try again or email us at <a href="mailto:hello@maplecallai.ca" class="form__link">hello@maplecallai.ca</a>.
+            </p>
+
+            <button type="submit" class="btn btn--primary btn--block btn--lg" id="formSubmitBtn">
               Book My Free Demo
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <p class="form__privacy">By submitting, you agree to our <a href="/privacy" class="form__link">Privacy Policy</a>. We'll never spam you.</p>
           </form>
+
           <div class="cta__form-success" id="formSuccess" aria-live="polite">
             <div class="success__icon">✓</div>
             <h3>You're booked!</h3>

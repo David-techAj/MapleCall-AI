@@ -152,43 +152,68 @@
 })();
 
 
-// ─── Demo form submission ──────────────────────────────────────
+// ─── Demo form → Formspree (AJAX) ─────────────────────────────
 (function initDemoForm() {
-  const form    = document.getElementById('demoForm');
-  const success = document.getElementById('formSuccess');
+  const form      = document.getElementById('demoForm');
+  const success   = document.getElementById('formSuccess');
+  const errorBox  = document.getElementById('formError');
+  const submitBtn = document.getElementById('formSubmitBtn');
 
   if (!form || !success) return;
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Basic validation
-    const email = form.querySelector('#email');
-    const name  = form.querySelector('#firstName');
+    // ── Client-side validation ──
+    const nameInput  = form.querySelector('#firstName');
+    const emailInput = form.querySelector('#email');
+    const required   = [nameInput, emailInput];
+    let valid = true;
 
-    if (!email.value.trim() || !name.value.trim()) {
-      // Highlight required fields
-      [email, name].forEach(function (input) {
-        if (!input.value.trim()) {
-          input.style.borderColor = '#ef4444';
-          input.addEventListener('input', function clear() {
-            input.style.borderColor = '';
-            input.removeEventListener('input', clear);
-          }, { once: true });
-        }
-      });
-      return;
-    }
+    required.forEach(function (input) {
+      if (!input.value.trim()) {
+        input.style.borderColor = '#ef4444';
+        input.addEventListener('input', function clear() {
+          input.style.borderColor = '';
+          input.removeEventListener('input', clear);
+        }, { once: true });
+        valid = false;
+      }
+    });
 
-    // Simulate async submit
-    const submitBtn = form.querySelector('[type="submit"]');
-    submitBtn.textContent = 'Sending...';
+    if (!valid) return;
+
+    // ── Loading state ──
     submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Sending&hellip;';
+    if (errorBox) errorBox.style.display = 'none';
 
-    setTimeout(function () {
-      form.style.display = 'none';
-      success.classList.add('visible');
-    }, 900);
+    // ── Submit to Formspree via fetch ──
+    var data = new FormData(form);
+
+    fetch('https://formspree.io/f/mojbywll', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function (response) {
+      if (response.ok) {
+        // ── Success ──
+        form.style.display = 'none';
+        success.classList.add('visible');
+      } else {
+        // ── Formspree returned an error ──
+        return response.json().then(function (json) {
+          throw new Error(json.error || 'Submission failed');
+        });
+      }
+    })
+    .catch(function () {
+      // ── Network / server error ──
+      if (errorBox) errorBox.style.display = 'block';
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = 'Book My Free Demo <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    });
   });
 })();
 

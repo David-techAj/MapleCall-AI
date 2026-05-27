@@ -13,45 +13,35 @@
 <body class="pr-page">
 
   <!-- ══════════════════════════════════════
-       NAVBAR — full nav, all links go back
-       to index.html sections
+       NAVBAR
   ══════════════════════════════════════ -->
   <header class="nav" id="nav">
     <div class="nav__inner">
-
-      <!-- Logo -->
       <a href="index.html" class="nav__logo" aria-label="MapleCall AI — Home">
         <div class="nav__logo-icon">M</div>
         <span class="nav__logo-text">
           <span class="nav__logo-maple">Maple</span><span class="nav__logo-call">Call</span> <span class="nav__logo-ai">AI</span>
         </span>
       </a>
-
-      <!-- Desktop links -->
       <nav class="nav__links" aria-label="Site navigation">
-        <a href="index.html#features"    class="nav__link">Features</a>
+        <a href="index.html#features"     class="nav__link">Features</a>
         <a href="index.html#how-it-works" class="nav__link">How It Works</a>
-        <a href="index.html#why-us"      class="nav__link">Why Us</a>
-        <a href="pricing.html"           class="nav__link nav__link--active">Pricing</a>
-        <a href="index.html#compliance"  class="nav__link">Compliance</a>
+        <a href="index.html#why-us"       class="nav__link">Why Us</a>
+        <a href="pricing.html"            class="nav__link nav__link--active">Pricing</a>
+        <a href="index.html#compliance"   class="nav__link">Compliance</a>
       </nav>
-
-      <!-- CTA -->
       <div class="nav__actions">
-        <a href="index.html#demo"         class="btn btn--ghost btn--sm">Log In</a>
+        <a href="index.html#demo"          class="btn btn--ghost btn--sm">Log In</a>
         <a href="get-started.html?plan=pro" class="btn btn--primary btn--sm">Book a Demo</a>
       </div>
-
-      <!-- Hamburger -->
       <button class="nav__hamburger" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
     </div>
 
-    <!-- Mobile overlay panel -->
+    <!-- Mobile overlay -->
     <div class="nav__overlay" id="navOverlay" aria-hidden="true">
       <div class="nav__panel">
-
         <div class="nav__panel-header">
-          <a href="index.html" class="nav__logo" aria-label="MapleCall AI Home">
+          <a href="index.html" class="nav__logo">
             <div class="nav__logo-icon">M</div>
             <span class="nav__logo-text">
               <span class="nav__logo-maple">Maple</span><span class="nav__logo-call">Call</span> <span class="nav__logo-ai">AI</span>
@@ -59,19 +49,15 @@
           </a>
           <button class="nav__close" id="navClose" aria-label="Close menu">✕</button>
         </div>
-
         <nav class="nav__panel-links">
-          <a href="index.html"             class="nav__panel-link">Home              <span class="nav__arrow">→</span></a>
-          <a href="index.html#features"    class="nav__panel-link">Features          <span class="nav__arrow">→</span></a>
-          <a href="index.html#how-it-works" class="nav__panel-link">How It Works     <span class="nav__arrow">→</span></a>
-          <a href="index.html#why-us"      class="nav__panel-link">Why Us            <span class="nav__arrow">→</span></a>
-          <a href="pricing.html"           class="nav__panel-link nav__panel-link--active">Pricing <span class="nav__arrow">→</span></a>
-          <a href="index.html#compliance"  class="nav__panel-link">Compliance        <span class="nav__arrow">→</span></a>
-          <a href="index.html#demo"        class="nav__panel-link">Book a Demo       <span class="nav__arrow">→</span></a>
+          <a href="index.html"              class="nav__panel-link">Home          <span class="nav__arrow">→</span></a>
+          <a href="index.html#features"     class="nav__panel-link">Features      <span class="nav__arrow">→</span></a>
+          <a href="index.html#how-it-works" class="nav__panel-link">How It Works  <span class="nav__arrow">→</span></a>
+          <a href="index.html#why-us"       class="nav__panel-link">Why Us        <span class="nav__arrow">→</span></a>
+          <a href="pricing.html"            class="nav__panel-link nav__panel-link--active">Pricing <span class="nav__arrow">→</span></a>
+          <a href="index.html#compliance"   class="nav__panel-link">Compliance    <span class="nav__arrow">→</span></a>
         </nav>
-
         <a href="get-started.html?plan=pro" class="btn btn--primary btn--block nav__panel-cta">Get Started Free →</a>
-
       </div>
     </div>
   </header>
@@ -82,130 +68,363 @@
   ══════════════════════════════════════ -->
   <section class="pr-hero">
     <div class="container">
-      <span class="pr-hero__badge">Pricing</span>
-      <h1 class="pr-hero__title">Simple, transparent pricing</h1>
-      <p class="pr-hero__sub">No setup fees. No hidden charges. Cancel anytime.<br />All prices in CAD — built for Canadian real estate agents.</p>
+      <p class="pr-hero__eyebrow">Pricing</p>
+      <h1 class="pr-hero__title">Transparent pricing.<br />No surprises.</h1>
+      <p class="pr-hero__sub">Every plan includes onboarding, CRTC compliance, and a 14-day free trial.<br />All prices in CAD.</p>
 
-      <div class="pr-hero__trust">
-        <span class="pr-trust__item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          14-day free trial
-        </span>
-        <span class="pr-trust__sep">·</span>
-        <span class="pr-trust__item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          No credit card required
-        </span>
-        <span class="pr-trust__sep">·</span>
-        <span class="pr-trust__item">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 18L18 6M6 6l12 12" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Cancel anytime
-        </span>
+      <!-- Toggle -->
+      <div class="pr-toggle-wrap">
+        <div class="pricing__toggle" role="group" aria-label="Billing frequency">
+          <button class="toggle__btn toggle__btn--active" id="toggleMonthly">Monthly</button>
+          <button class="toggle__btn" id="toggleAnnual">
+            Annual
+            <span class="toggle__badge">Save 20%</span>
+          </button>
+        </div>
       </div>
     </div>
   </section>
 
 
   <!-- ══════════════════════════════════════
-       PRICING CARDS
+       PLAN CARDS
   ══════════════════════════════════════ -->
   <section class="pr-cards">
     <div class="container">
+      <div class="pr-grid">
 
-      <!-- Toggle -->
-      <div class="pricing__toggle" role="group" aria-label="Billing frequency">
-        <button class="toggle__btn toggle__btn--active" data-period="monthly" id="toggleMonthly">Monthly</button>
-        <button class="toggle__btn" data-period="annual" id="toggleAnnual">
-          Annual
-          <span class="toggle__badge">Save 20%</span>
-        </button>
+        <!-- ── Starter ── -->
+        <div class="pr-card">
+          <div class="pr-card__top">
+            <span class="pr-card__tier">Starter</span>
+            <p class="pr-card__desc">For solo agents starting with AI calling.</p>
+          </div>
+          <div class="pr-card__price">
+            <span class="pr-card__currency">$</span>
+            <span class="pr-card__amount" data-monthly="199" data-annual="159">199</span>
+            <span class="pr-card__period">/mo</span>
+          </div>
+          <p class="pr-card__savings" data-savings="480"></p>
+          <a href="get-started.html?plan=starter" class="btn btn--ghost btn--block pr-card__cta">Get Started →</a>
+          <ul class="pr-card__features">
+            <li>
+              <svg class="pr-feat-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              500 calls per month
+            </li>
+            <li>
+              <svg class="pr-feat-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              English AI voice agent
+            </li>
+            <li>
+              <svg class="pr-feat-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              1 CRM integration
+            </li>
+            <li>
+              <svg class="pr-feat-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              CRTC &amp; DNCL compliant
+            </li>
+            <li>
+              <svg class="pr-feat-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Email support
+            </li>
+          </ul>
+        </div>
+
+        <!-- ── Pro (featured) ── -->
+        <div class="pr-card pr-card--featured">
+          <div class="pr-card__badge">Most Popular</div>
+          <div class="pr-card__top">
+            <span class="pr-card__tier">Pro</span>
+            <p class="pr-card__desc">For active agents dominating their market.</p>
+          </div>
+          <div class="pr-card__price">
+            <span class="pr-card__currency">$</span>
+            <span class="pr-card__amount" data-monthly="349" data-annual="279">349</span>
+            <span class="pr-card__period">/mo</span>
+          </div>
+          <p class="pr-card__savings" data-savings="840"></p>
+          <a href="get-started.html?plan=pro" class="btn btn--primary btn--block pr-card__cta">Get Started →</a>
+          <ul class="pr-card__features">
+            <li>
+              <svg class="pr-feat-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              2,000 calls per month
+            </li>
+            <li>
+              <svg class="pr-feat-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              EN · FR · 普通話 · 廣東話
+            </li>
+            <li>
+              <svg class="pr-feat-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              All CRM integrations
+            </li>
+            <li>
+              <svg class="pr-feat-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Full analytics dashboard
+            </li>
+            <li>
+              <svg class="pr-feat-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Priority support
+            </li>
+          </ul>
+        </div>
+
+        <!-- ── Team ── -->
+        <div class="pr-card">
+          <div class="pr-card__top">
+            <span class="pr-card__tier">Team</span>
+            <p class="pr-card__desc">For brokerages that need scale and control.</p>
+          </div>
+          <div class="pr-card__price">
+            <span class="pr-card__currency">$</span>
+            <span class="pr-card__amount" data-monthly="599" data-annual="479">599</span>
+            <span class="pr-card__period">/mo</span>
+          </div>
+          <p class="pr-card__savings" data-savings="1440"></p>
+          <a href="get-started.html?plan=team" class="btn btn--ghost btn--block pr-card__cta">Get Started →</a>
+          <ul class="pr-card__features">
+            <li>
+              <svg class="pr-feat-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Unlimited calls
+            </li>
+            <li>
+              <svg class="pr-feat-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              All 4 languages
+            </li>
+            <li>
+              <svg class="pr-feat-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Up to 10 agent seats
+            </li>
+            <li>
+              <svg class="pr-feat-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Dedicated account manager
+            </li>
+            <li>
+              <svg class="pr-feat-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Custom reporting &amp; SLAs
+            </li>
+          </ul>
+        </div>
+
       </div>
 
-      <!-- Cards -->
-      <div class="pricing__grid">
-
-        <!-- Starter -->
-        <div class="pricing__card">
-          <div class="pricing__header">
-            <span class="pricing__tier">Starter</span>
-            <div class="pricing__price">
-              <span class="pricing__currency">$</span>
-              <span class="pricing__amount" data-monthly="199" data-annual="159">199</span>
-              <span class="pricing__period">/mo</span>
-            </div>
-            <p class="pricing__savings" data-savings="480" aria-live="polite"></p>
-            <p class="pricing__tagline">Perfect for solo agents just getting started with AI calling.</p>
-          </div>
-          <ul class="pricing__features">
-            <li><span class="feat__check">✓</span> 500 calls per month</li>
-            <li><span class="feat__check">✓</span> English language only</li>
-            <li><span class="feat__check">✓</span> 1 CRM integration</li>
-            <li><span class="feat__check">✓</span> CRTC &amp; DNCL compliant</li>
-            <li><span class="feat__check">✓</span> Email support</li>
-            <li><span class="feat__check feat__check--muted">—</span> <span class="feat__muted">Multilingual calling</span></li>
-            <li><span class="feat__check feat__check--muted">—</span> <span class="feat__muted">Analytics dashboard</span></li>
-            <li><span class="feat__check feat__check--muted">—</span> <span class="feat__muted">Team accounts</span></li>
-          </ul>
-          <a href="get-started.html?plan=starter" class="btn btn--ghost btn--block">Get Started →</a>
-        </div>
-
-        <!-- Pro — featured -->
-        <div class="pricing__card pricing__card--featured">
-          <div class="pricing__popular">Most Popular</div>
-          <div class="pricing__header">
-            <span class="pricing__tier">Pro</span>
-            <div class="pricing__price">
-              <span class="pricing__currency">$</span>
-              <span class="pricing__amount" data-monthly="349" data-annual="279">349</span>
-              <span class="pricing__period">/mo</span>
-            </div>
-            <p class="pricing__savings" data-savings="840" aria-live="polite"></p>
-            <p class="pricing__tagline">For active agents serious about dominating their market.</p>
-          </div>
-          <ul class="pricing__features">
-            <li><span class="feat__check">✓</span> 2,000 calls per month</li>
-            <li><span class="feat__check">✓</span> <strong>All 4 languages</strong> (EN, FR, 普通話, 廣東話)</li>
-            <li><span class="feat__check">✓</span> All CRM integrations</li>
-            <li><span class="feat__check">✓</span> CRTC &amp; DNCL compliant</li>
-            <li><span class="feat__check">✓</span> Priority email &amp; chat support</li>
-            <li><span class="feat__check">✓</span> Full analytics dashboard</li>
-            <li><span class="feat__check">✓</span> Call transcripts &amp; recordings</li>
-            <li><span class="feat__check feat__check--muted">—</span> <span class="feat__muted">Team accounts</span></li>
-          </ul>
-          <a href="get-started.html?plan=pro" class="btn btn--primary btn--block">Get Started →</a>
-        </div>
-
-        <!-- Team -->
-        <div class="pricing__card">
-          <div class="pricing__header">
-            <span class="pricing__tier">Team</span>
-            <div class="pricing__price">
-              <span class="pricing__currency">$</span>
-              <span class="pricing__amount" data-monthly="599" data-annual="479">599</span>
-              <span class="pricing__period">/mo</span>
-            </div>
-            <p class="pricing__savings" data-savings="1440" aria-live="polite"></p>
-            <p class="pricing__tagline">For brokerages and teams who need scale without limits.</p>
-          </div>
-          <ul class="pricing__features">
-            <li><span class="feat__check">✓</span> Unlimited calls</li>
-            <li><span class="feat__check">✓</span> All 4 languages</li>
-            <li><span class="feat__check">✓</span> All CRM integrations</li>
-            <li><span class="feat__check">✓</span> CRTC &amp; DNCL compliant</li>
-            <li><span class="feat__check">✓</span> Dedicated account manager</li>
-            <li><span class="feat__check">✓</span> Full analytics dashboard</li>
-            <li><span class="feat__check">✓</span> Call transcripts &amp; recordings</li>
-            <li><span class="feat__check">✓</span> Up to 10 agent accounts</li>
-          </ul>
-          <a href="get-started.html?plan=team" class="btn btn--ghost btn--block">Get Started →</a>
-        </div>
-
-      </div>
-
-      <p class="pricing__note">
-        All plans include a <strong>14-day free trial</strong>. No credit card required. Questions?
-        <a href="mailto:hello@maplecallai.ca" class="pricing__link">Email us</a> — we reply within 1 business day.
+      <p class="pr-note">
+        All plans include a <strong>14-day free trial</strong>. No credit card required.
+        Questions? <a href="mailto:hello@maplecallai.ca">Email us</a> — we reply within 1 business day.
       </p>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       FEATURE COMPARISON TABLE
+  ══════════════════════════════════════ -->
+  <section class="pr-compare">
+    <div class="container">
+
+      <div class="pr-compare__header">
+        <span class="section-label">Compare plans</span>
+        <h2 class="pr-compare__title">Everything side by side</h2>
+      </div>
+
+      <div class="pr-table-wrap">
+        <table class="pr-table" role="table">
+
+          <!-- Sticky column headers -->
+          <thead>
+            <tr class="pr-table__head-row">
+              <th class="pr-table__label-col" scope="col"></th>
+              <th class="pr-table__plan-col" scope="col">
+                <span class="pr-table__plan-name">Starter</span>
+                <span class="pr-table__plan-price">$199<span>/mo</span></span>
+              </th>
+              <th class="pr-table__plan-col pr-table__plan-col--featured" scope="col">
+                <span class="pr-table__plan-badge">Most Popular</span>
+                <span class="pr-table__plan-name">Pro</span>
+                <span class="pr-table__plan-price">$349<span>/mo</span></span>
+              </th>
+              <th class="pr-table__plan-col" scope="col">
+                <span class="pr-table__plan-name">Team</span>
+                <span class="pr-table__plan-price">$599<span>/mo</span></span>
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <!-- ─ Calls & Usage ─ -->
+            <tr class="pr-table__category">
+              <td colspan="4">Calls &amp; Usage</td>
+            </tr>
+            <tr class="pr-table__row">
+              <td class="pr-table__feature">Outbound calls / month</td>
+              <td>500</td>
+              <td class="pr-table__cell--featured">2,000</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr class="pr-table__row pr-table__row--alt">
+              <td class="pr-table__feature">Voicemail drop</td>
+              <td><span class="pr-check">✓</span></td>
+              <td class="pr-table__cell--featured"><span class="pr-check">✓</span></td>
+              <td><span class="pr-check">✓</span></td>
+            </tr>
+            <tr class="pr-table__row">
+              <td class="pr-table__feature">Call recording</td>
+              <td><span class="pr-check">✓</span></td>
+              <td class="pr-table__cell--featured"><span class="pr-check">✓</span></td>
+              <td><span class="pr-check">✓</span></td>
+            </tr>
+            <tr class="pr-table__row pr-table__row--alt">
+              <td class="pr-table__feature">Call transcripts</td>
+              <td><span class="pr-dash">—</span></td>
+              <td class="pr-table__cell--featured"><span class="pr-check">✓</span></td>
+              <td><span class="pr-check">✓</span></td>
+            </tr>
+            <tr class="pr-table__row">
+              <td class="pr-table__feature">Agent seats</td>
+              <td>1</td>
+              <td class="pr-table__cell--featured">1</td>
+              <td>Up to 10</td>
+            </tr>
+
+            <!-- ─ AI Voice & Languages ─ -->
+            <tr class="pr-table__category">
+              <td colspan="4">AI Voice &amp; Languages</td>
+            </tr>
+            <tr class="pr-table__row">
+              <td class="pr-table__feature">English</td>
+              <td><span class="pr-check">✓</span></td>
+              <td class="pr-table__cell--featured"><span class="pr-check">✓</span></td>
+              <td><span class="pr-check">✓</span></td>
+            </tr>
+            <tr class="pr-table__row pr-table__row--alt">
+              <td class="pr-table__feature">French (Français)</td>
+              <td><span class="pr-dash">—</span></td>
+              <td class="pr-table__cell--featured"><span class="pr-check">✓</span></td>
+              <td><span class="pr-check">✓</span></td>
+            </tr>
+            <tr class="pr-table__row">
+              <td class="pr-table__feature">Mandarin (普通話)</td>
+              <td><span class="pr-dash">—</span></td>
+              <td class="pr-table__cell--featured"><span class="pr-check">✓</span></td>
+              <td><span class="pr-check">✓</span></td>
+            </tr>
+            <tr class="pr-table__row pr-table__row--alt">
+              <td class="pr-table__feature">Cantonese (廣東話)</td>
+              <td><span class="pr-dash">—</span></td>
+              <td class="pr-table__cell--featured"><span class="pr-check">✓</span></td>
+              <td><span class="pr-check">✓</span></td>
+            </tr>
+            <tr class="pr-table__row">
+              <td class="pr-table__feature">Custom AI voice</td>
+              <td><span class="pr-dash">—</span></td>
+              <td class="pr-table__cell--featured"><span class="pr-dash">—</span></td>
+              <td><span class="pr-check">✓</span></td>
+            </tr>
+
+            <!-- ─ Leads & CRM ─ -->
+            <tr class="pr-table__category">
+              <td colspan="4">Leads &amp; CRM</td>
+            </tr>
+            <tr class="pr-table__row">
+              <td class="pr-table__feature">CRM integrations</td>
+              <td>1</td>
+              <td class="pr-table__cell--featured">All</td>
+              <td>All</td>
+            </tr>
+            <tr class="pr-table__row pr-table__row--alt">
+              <td class="pr-table__feature">Automated follow-up sequences</td>
+              <td><span class="pr-check">✓</span></td>
+              <td class="pr-table__cell--featured"><span class="pr-check">✓</span></td>
+              <td><span class="pr-check">✓</span></td>
+            </tr>
+            <tr class="pr-table__row">
+              <td class="pr-table__feature">Showing booking to calendar</td>
+              <td><span class="pr-check">✓</span></td>
+              <td class="pr-table__cell--featured"><span class="pr-check">✓</span></td>
+              <td><span class="pr-check">✓</span></td>
+            </tr>
+            <tr class="pr-table__row pr-table__row--alt">
+              <td class="pr-table__feature">Lead scoring</td>
+              <td><span class="pr-dash">—</span></td>
+              <td class="pr-table__cell--featured"><span class="pr-check">✓</span></td>
+              <td><span class="pr-check">✓</span></td>
+            </tr>
+            <tr class="pr-table__row">
+              <td class="pr-table__feature">API &amp; Zapier access</td>
+              <td><span class="pr-dash">—</span></td>
+              <td class="pr-table__cell--featured"><span class="pr-dash">—</span></td>
+              <td><span class="pr-check">✓</span></td>
+            </tr>
+
+            <!-- ─ Compliance & Security ─ -->
+            <tr class="pr-table__category">
+              <td colspan="4">Compliance &amp; Security</td>
+            </tr>
+            <tr class="pr-table__row">
+              <td class="pr-table__feature">CRTC compliant calling windows</td>
+              <td><span class="pr-check">✓</span></td>
+              <td class="pr-table__cell--featured"><span class="pr-check">✓</span></td>
+              <td><span class="pr-check">✓</span></td>
+            </tr>
+            <tr class="pr-table__row pr-table__row--alt">
+              <td class="pr-table__feature">National DNCL integration</td>
+              <td><span class="pr-check">✓</span></td>
+              <td class="pr-table__cell--featured"><span class="pr-check">✓</span></td>
+              <td><span class="pr-check">✓</span></td>
+            </tr>
+            <tr class="pr-table__row">
+              <td class="pr-table__feature">Consent &amp; opt-out management</td>
+              <td><span class="pr-check">✓</span></td>
+              <td class="pr-table__cell--featured"><span class="pr-check">✓</span></td>
+              <td><span class="pr-check">✓</span></td>
+            </tr>
+            <tr class="pr-table__row pr-table__row--alt">
+              <td class="pr-table__feature">Data residency in Canada</td>
+              <td><span class="pr-check">✓</span></td>
+              <td class="pr-table__cell--featured"><span class="pr-check">✓</span></td>
+              <td><span class="pr-check">✓</span></td>
+            </tr>
+
+            <!-- ─ Support ─ -->
+            <tr class="pr-table__category">
+              <td colspan="4">Support</td>
+            </tr>
+            <tr class="pr-table__row">
+              <td class="pr-table__feature">Onboarding</td>
+              <td>Self-serve</td>
+              <td class="pr-table__cell--featured">Guided</td>
+              <td>White-glove</td>
+            </tr>
+            <tr class="pr-table__row pr-table__row--alt">
+              <td class="pr-table__feature">Support channel</td>
+              <td>Email</td>
+              <td class="pr-table__cell--featured">Priority email &amp; chat</td>
+              <td>Dedicated manager</td>
+            </tr>
+            <tr class="pr-table__row">
+              <td class="pr-table__feature">Response time</td>
+              <td>2 business days</td>
+              <td class="pr-table__cell--featured">1 business day</td>
+              <td>Same day</td>
+            </tr>
+            <tr class="pr-table__row pr-table__row--alt">
+              <td class="pr-table__feature">Custom reporting &amp; SLA</td>
+              <td><span class="pr-dash">—</span></td>
+              <td class="pr-table__cell--featured"><span class="pr-dash">—</span></td>
+              <td><span class="pr-check">✓</span></td>
+            </tr>
+
+            <!-- CTA row -->
+            <tr class="pr-table__cta-row">
+              <td></td>
+              <td><a href="get-started.html?plan=starter" class="btn btn--ghost btn--sm btn--block">Get Started</a></td>
+              <td class="pr-table__cell--featured"><a href="get-started.html?plan=pro" class="btn btn--primary btn--sm btn--block">Get Started</a></td>
+              <td><a href="get-started.html?plan=team" class="btn btn--ghost btn--sm btn--block">Get Started</a></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
 
     </div>
   </section>
@@ -216,60 +435,35 @@
   ══════════════════════════════════════ -->
   <section class="pr-faq-section">
     <div class="container">
-
       <div class="pr-faq-header">
         <span class="section-label">FAQ</span>
         <h2 class="pr-faq-title">Common questions</h2>
       </div>
-
       <div class="pr-faq-grid">
 
         <div class="pr-faq-card">
-          <div class="pr-faq-card__icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M8 7h12M8 12h12M8 17h12M4 7h.01M4 12h.01M4 17h.01" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
           <h3 class="pr-faq-card__q">Can I switch plans later?</h3>
-          <p class="pr-faq-card__a">Yes — upgrade or downgrade anytime from your dashboard. Changes take effect at the next billing cycle.</p>
+          <p class="pr-faq-card__a">Yes — upgrade or downgrade anytime from your dashboard. Changes take effect at the next billing cycle with no penalty.</p>
         </div>
-
         <div class="pr-faq-card">
-          <div class="pr-faq-card__icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
           <h3 class="pr-faq-card__q">Do unused calls roll over?</h3>
-          <p class="pr-faq-card__a">No — call credits reset each billing cycle. If you're regularly hitting your limit, we'll recommend upgrading.</p>
+          <p class="pr-faq-card__a">No — call credits reset each billing cycle. If you're regularly hitting your limit, we'll proactively recommend an upgrade.</p>
         </div>
-
         <div class="pr-faq-card">
-          <div class="pr-faq-card__icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <h3 class="pr-faq-card__q">How fast is onboarding?</h3>
-          <p class="pr-faq-card__a">Most agents go live within 24 hours. We handle setup personally — no technical knowledge required.</p>
+          <h3 class="pr-faq-card__q">How fast is setup?</h3>
+          <p class="pr-faq-card__a">Most agents are live within 24 hours. We handle the setup with you personally — no technical knowledge required.</p>
         </div>
-
         <div class="pr-faq-card">
-          <div class="pr-faq-card__icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
           <h3 class="pr-faq-card__q">Is it CRTC compliant?</h3>
-          <p class="pr-faq-card__a">100%. DNCL integration, legal calling windows, mandatory opt-out, and call identification are all built in.</p>
+          <p class="pr-faq-card__a">100%. DNCL integration, legal calling windows, mandatory opt-out, and business identification are all built in to every plan.</p>
         </div>
-
         <div class="pr-faq-card">
-          <div class="pr-faq-card__icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
           <h3 class="pr-faq-card__q">What languages are supported?</h3>
-          <p class="pr-faq-card__a">Pro and Team plans include English, French, Mandarin (普通話), and Cantonese (廣東話) — covering most Canadian real estate markets.</p>
+          <p class="pr-faq-card__a">Pro and Team plans include English, French, Mandarin (普通話), and Cantonese (廣東話) — covering virtually every Canadian real estate market.</p>
         </div>
-
         <div class="pr-faq-card">
-          <div class="pr-faq-card__icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3 class="pr-faq-card__q">What support do I get?</h3>
-          <p class="pr-faq-card__a">Starter gets email support. Pro adds priority chat. Team includes a dedicated account manager and SLA guarantee.</p>
+          <h3 class="pr-faq-card__q">Is there a free trial?</h3>
+          <p class="pr-faq-card__a">Yes — every plan starts with a 14-day free trial. No credit card required. Cancel anytime before the trial ends and pay nothing.</p>
         </div>
 
       </div>
@@ -284,8 +478,8 @@
     <div class="container">
       <div class="pr-cta__inner">
         <div class="pr-cta__text">
-          <h2 class="pr-cta__title">Still not sure which plan fits?</h2>
-          <p class="pr-cta__sub">Book a free 20-minute call. We'll walk through your pipeline and recommend the right setup — no pressure.</p>
+          <h2 class="pr-cta__title">Not sure which plan fits?</h2>
+          <p class="pr-cta__sub">Book a free 20-minute call. We'll walk through your pipeline and set up the right plan — live, in under 24 hours.</p>
         </div>
         <div class="pr-cta__actions">
           <a href="get-started.html?plan=pro" class="btn btn--primary btn--lg">
@@ -300,15 +494,14 @@
 
 
   <!-- ══════════════════════════════════════
-       FOOTER — full nav links
+       FOOTER
   ══════════════════════════════════════ -->
   <footer class="pr-footer">
     <div class="container">
       <div class="pr-footer__inner">
 
-        <!-- Brand -->
         <div class="pr-footer__brand">
-          <a href="index.html" class="nav__logo pr-footer__logo" aria-label="MapleCall AI Home">
+          <a href="index.html" class="nav__logo pr-footer__logo">
             <div class="nav__logo-icon">M</div>
             <span class="nav__logo-text">
               <span class="nav__logo-maple">Maple</span><span class="nav__logo-call">Call</span> <span class="nav__logo-ai">AI</span>
@@ -318,7 +511,6 @@
           <p class="pr-footer__location">🍁 Toronto, Canada</p>
         </div>
 
-        <!-- Product links -->
         <div class="pr-footer__col">
           <span class="pr-footer__heading">Product</span>
           <a href="index.html#features"     class="pr-footer__link">Features</a>
@@ -328,7 +520,6 @@
           <a href="index.html#compliance"   class="pr-footer__link">Compliance</a>
         </div>
 
-        <!-- Get started links -->
         <div class="pr-footer__col">
           <span class="pr-footer__heading">Get Started</span>
           <a href="get-started.html?plan=starter" class="pr-footer__link">Starter Plan</a>
@@ -337,7 +528,6 @@
           <a href="index.html#demo"               class="pr-footer__link">Book a Demo</a>
         </div>
 
-        <!-- Company links -->
         <div class="pr-footer__col">
           <span class="pr-footer__heading">Company</span>
           <a href="mailto:hello@maplecallai.ca" class="pr-footer__link">Contact Us</a>
@@ -346,7 +536,6 @@
         </div>
 
       </div>
-
       <div class="pr-footer__bottom">
         <p>© 2025 MapleCall AI Inc. All rights reserved.</p>
         <p>100% CRTC compliant · EN · FR · 普通話 · 廣東話</p>

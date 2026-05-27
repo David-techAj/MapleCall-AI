@@ -1,0 +1,62 @@
+/* =============================================================
+   MapleCall AI — Pricing Page
+   Reuses main.css pricing cards + get-started.css nav/footer
+   ============================================================= */
+
+.pr-page {
+  min-height: 100vh;
+  background: #060f1a;
+}
+
+/* ── Main layout ── */
+.pr-main {
+  padding: 56px 24px 80px;
+}
+
+/* ── Page header ── */
+.pr-header {
+  margin-bottom: 36px;
+}
+
+.pr-header .section-title {
+  font-size: clamp(28px, 5vw, 42px);
+}
+
+/* ── FAQ strip ── */
+.pr-faq {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: #0d1f30;
+  border: 0.5px solid #0d1f30;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 48px;
+}
+
+.pr-faq__item {
+  background: #060f1a;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pr-faq__q {
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.pr-faq__a {
+  font-size: 13px;
+  color: #5577aa;
+  line-height: 1.6;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .pr-faq {
+    grid-template-columns: 1fr;
+  }
+}

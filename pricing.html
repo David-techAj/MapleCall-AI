@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MapleCall AI pricing — simple, transparent plans for Canadian real estate agents. Starter $199, Pro $349, Team $599/month." />
+  <meta name="theme-color" content="#060f1a" />
+  <title>Pricing — MapleCall AI</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/pricing.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+</head>
+<body class="pr-page">
+
+  <!-- ── Minimal navbar ── -->
+  <header class="gs-nav">
+    <div class="gs-nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Back to MapleCall AI">
+        <div class="nav__logo-icon">M</div>
+        <span class="nav__logo-text">
+          <span class="nav__logo-maple">Maple</span><span class="nav__logo-call">Call</span> <span class="nav__logo-ai">AI</span>
+        </span>
+      </a>
+      <a href="index.html" class="gs-nav__back">← Back to home</a>
+    </div>
+  </header>
+
+  <!-- ── Main content ── -->
+  <main class="pr-main">
+    <div class="container">
+
+      <!-- Page header -->
+      <div class="section-header pr-header">
+        <span class="section-label">Pricing</span>
+        <h1 class="section-title">Simple, transparent pricing</h1>
+        <p class="section-desc">No setup fees. No hidden charges. Cancel anytime. All prices in CAD.</p>
+      </div>
+
+      <!-- Toggle -->
+      <div class="pricing__toggle" role="group" aria-label="Billing frequency">
+        <button class="toggle__btn toggle__btn--active" data-period="monthly" id="toggleMonthly">Monthly</button>
+        <button class="toggle__btn" data-period="annual" id="toggleAnnual">
+          Annual
+          <span class="toggle__badge">Save 20%</span>
+        </button>
+      </div>
+
+      <!-- Pricing grid -->
+      <div class="pricing__grid">
+
+        <!-- Starter -->
+        <div class="pricing__card">
+          <div class="pricing__header">
+            <span class="pricing__tier">Starter</span>
+            <div class="pricing__price">
+              <span class="pricing__currency">$</span>
+              <span class="pricing__amount" data-monthly="199" data-annual="159">199</span>
+              <span class="pricing__period">/mo</span>
+            </div>
+            <p class="pricing__savings" data-savings="480" aria-live="polite"></p>
+            <p class="pricing__tagline">Perfect for solo agents just getting started with AI calling.</p>
+          </div>
+          <ul class="pricing__features">
+            <li><span class="feat__check">✓</span> 500 calls per month</li>
+            <li><span class="feat__check">✓</span> English language only</li>
+            <li><span class="feat__check">✓</span> 1 CRM integration</li>
+            <li><span class="feat__check">✓</span> CRTC &amp; DNCL compliant</li>
+            <li><span class="feat__check">✓</span> Email support</li>
+            <li><span class="feat__check feat__check--muted">—</span> <span class="feat__muted">Multilingual calling</span></li>
+            <li><span class="feat__check feat__check--muted">—</span> <span class="feat__muted">Analytics dashboard</span></li>
+            <li><span class="feat__check feat__check--muted">—</span> <span class="feat__muted">Team accounts</span></li>
+          </ul>
+          <a href="get-started.html?plan=starter" class="btn btn--ghost btn--block">Get Started →</a>
+        </div>
+
+        <!-- Pro — highlighted -->
+        <div class="pricing__card pricing__card--featured">
+          <div class="pricing__popular">Most Popular</div>
+          <div class="pricing__header">
+            <span class="pricing__tier">Pro</span>
+            <div class="pricing__price">
+              <span class="pricing__currency">$</span>
+              <span class="pricing__amount" data-monthly="349" data-annual="279">349</span>
+              <span class="pricing__period">/mo</span>
+            </div>
+            <p class="pricing__savings" data-savings="840" aria-live="polite"></p>
+            <p class="pricing__tagline">For active agents serious about dominating their market.</p>
+          </div>
+          <ul class="pricing__features">
+            <li><span class="feat__check">✓</span> 2,000 calls per month</li>
+            <li><span class="feat__check">✓</span> <strong>All 4 languages</strong> (EN, FR, 普通話, 廣東話)</li>
+            <li><span class="feat__check">✓</span> All CRM integrations</li>
+            <li><span class="feat__check">✓</span> CRTC &amp; DNCL compliant</li>
+            <li><span class="feat__check">✓</span> Priority email &amp; chat support</li>
+            <li><span class="feat__check">✓</span> Full analytics dashboard</li>
+            <li><span class="feat__check">✓</span> Call transcripts &amp; recordings</li>
+            <li><span class="feat__check feat__check--muted">—</span> <span class="feat__muted">Team accounts</span></li>
+          </ul>
+          <a href="get-started.html?plan=pro" class="btn btn--primary btn--block">Get Started →</a>
+        </div>
+
+        <!-- Team -->
+        <div class="pricing__card">
+          <div class="pricing__header">
+            <span class="pricing__tier">Team</span>
+            <div class="pricing__price">
+              <span class="pricing__currency">$</span>
+              <span class="pricing__amount" data-monthly="599" data-annual="479">599</span>
+              <span class="pricing__period">/mo</span>
+            </div>
+            <p class="pricing__savings" data-savings="1440" aria-live="polite"></p>
+            <p class="pricing__tagline">For brokerages and teams who need scale without limits.</p>
+          </div>
+          <ul class="pricing__features">
+            <li><span class="feat__check">✓</span> Unlimited calls</li>
+            <li><span class="feat__check">✓</span> All 4 languages</li>
+            <li><span class="feat__check">✓</span> All CRM integrations</li>
+            <li><span class="feat__check">✓</span> CRTC &amp; DNCL compliant</li>
+            <li><span class="feat__check">✓</span> Dedicated account manager</li>
+            <li><span class="feat__check">✓</span> Full analytics dashboard</li>
+            <li><span class="feat__check">✓</span> Call transcripts &amp; recordings</li>
+            <li><span class="feat__check">✓</span> Up to 10 agent accounts</li>
+          </ul>
+          <a href="get-started.html?plan=team" class="btn btn--ghost btn--block">Get Started →</a>
+        </div>
+
+      </div>
+
+      <p class="pricing__note">
+        All plans include a <strong>14-day free trial</strong>. No credit card required. Questions?
+        <a href="mailto:hello@maplecallai.ca" class="pricing__link">Email us</a> — we reply within 1 business day.
+      </p>
+
+      <!-- FAQ strip -->
+      <div class="pr-faq">
+        <div class="pr-faq__item">
+          <span class="pr-faq__q">Can I switch plans later?</span>
+          <span class="pr-faq__a">Yes — upgrade or downgrade any time from your dashboard.</span>
+        </div>
+        <div class="pr-faq__item">
+          <span class="pr-faq__q">Do unused calls roll over?</span>
+          <span class="pr-faq__a">No, call credits reset each billing cycle.</span>
+        </div>
+        <div class="pr-faq__item">
+          <span class="pr-faq__q">Is setup included?</span>
+          <span class="pr-faq__a">Yes — we onboard every new customer personally within 24 hours.</span>
+        </div>
+        <div class="pr-faq__item">
+          <span class="pr-faq__q">Is it CRTC compliant?</span>
+          <span class="pr-faq__a">100%. DNCL integration, calling windows, and opt-out are all built in.</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="gs-footer">
+    <p>© 2025 MapleCall AI Inc. · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · 🍁 Toronto, Canada</p>
+  </footer>
+
+  <!-- Reuse get-started nav/footer styles -->
+  <script src="scripts/pricing.js"></script>
+</body>
+</html>

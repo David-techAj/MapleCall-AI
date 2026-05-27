@@ -10,9 +10,14 @@
 *.swp
 *.swo
 
-# Node (if you ever add a build step)
+# Node
 node_modules/
 npm-debug.log*
+package-lock.json
+package.json
+
+# Screenshot tool output — local only, never commit screenshots
+temporary screenshots/
 
 # Vercel
 .vercel/

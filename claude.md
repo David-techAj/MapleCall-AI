@@ -264,11 +264,41 @@ Stay pragmatic. Stay reliable. Keep learning.
 
 ## Screenshot Workflow
 
-- Puppeteer is installed at `C:/Users/nateh/AppData/Local/Temp/puppeteer-test/`. Chrome cache is at `C:/Users/nateh/.cache/puppeteer/`
-- **Always screenshot from localhost:** `node screenshot.mjs http://localhost:3000`
-- Screenshots are saved automatically to `/temporary screenshots/screenshot-N.png` (auto-incremented, never overwritten)
-- Optional label suffix: `node screenshot.mjs http://localhost:3000 label` → saves as `screenshot-N-label.png`
-- `screenshot.mjs` lives in the project root. Use it as-is.
-- After screenshotting, read the PNG from `temporary screenshots/` with the Read tool — Claude can see and analyze the image directly.
-- When comparing, be specific: "heading is 32px but reference shows ~24px", "card gap is 16px but should be 24px"
-- Check: spacing/padding, font size/weight/line-height, colors (exact hex), alignment, border-radius, shadows, image sizing
+**Environment:** macOS Ventura 13.7 · Google Chrome at `/Applications/Google Chrome.app` · Node not yet installed
+
+### First-time setup (run once in Terminal)
+```bash
+# 1. Install Node.js (via official installer — no Homebrew needed)
+#    Download from: https://nodejs.org  →  pick the LTS version → install
+
+# 2. Install Puppeteer inside the project
+cd "/Users/admin/MapleCall AI"
+npm install puppeteer
+
+# 3. Serve the site locally
+npx serve . -p 3000
+```
+
+### Taking screenshots
+```bash
+# Always screenshot from localhost (open a second Terminal tab):
+node screenshot.mjs http://localhost:3000
+
+# Optional section label — appended to filename:
+node screenshot.mjs http://localhost:3000 hero
+node screenshot.mjs http://localhost:3000 pricing
+node screenshot.mjs http://localhost:3000 why-us
+```
+
+### How it works
+- `screenshot.mjs` lives in the project root — use it as-is, never edit it
+- Chrome path is hardcoded to `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`
+- Puppeteer cache lands at `~/.cache/puppeteer/` after first `npm install puppeteer`
+- Screenshots save to `temporary screenshots/screenshot-N[-label].png` (auto-incremented, never overwritten)
+- After screenshotting, read the PNG with the Read tool — Claude can see and analyze the image directly
+
+### What to check when comparing
+- Spacing/padding, font size/weight/line-height
+- Colors (exact hex — e.g. "shows #378ADD but should be #5577aa")
+- Alignment, border-radius, shadows, image sizing
+- Be specific: "heading is 32px but reference shows ~24px", "card gap is 16px but should be 24px"

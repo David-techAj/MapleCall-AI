@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MapleCall AI — AI-powered outbound dialer for Canadian real estate agents. Follows up on leads in 60 seconds, speaks 4 languages, and is 100% CRTC compliant." />
+  <meta name="theme-color" content="#060f1a" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="MapleCall AI — Never Miss a Lead Again" />
+  <meta property="og:description" content="AI calling agent for Canadian real estate. Calls every lead in 60 seconds. English, French, Mandarin, Cantonese. 100% CRTC compliant." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://maplecallai.ca" />
+
+  <title>MapleCall AI — AI Calling for Canadian Real Estate</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+</head>
+<body>
+
+  <!-- =============================
+       NAVBAR
+  ============================= -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+
+      <!-- Logo -->
+      <a href="/" class="nav__logo" aria-label="MapleCall AI Home">
+        <div class="nav__logo-icon">M</div>
+        <span class="nav__logo-text">
+          <span class="nav__logo-maple">Maple</span><span class="nav__logo-call">Call</span> <span class="nav__logo-ai">AI</span>
+        </span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <nav class="nav__links" aria-label="Main navigation">
+        <a href="#features" class="nav__link">Features</a>
+        <a href="#how-it-works" class="nav__link">How It Works</a>
+        <a href="#pricing" class="nav__link">Pricing</a>
+        <a href="#compliance" class="nav__link">Compliance</a>
+      </nav>
+
+      <!-- Nav CTA -->
+      <div class="nav__actions">
+        <a href="#pricing" class="btn btn--ghost btn--sm">Log In</a>
+        <a href="#demo" class="btn btn--primary btn--sm">Book a Demo</a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button class="nav__hamburger" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="nav__mobile" id="navMobile" aria-hidden="true">
+      <a href="#features" class="nav__mobile-link">Features</a>
+      <a href="#how-it-works" class="nav__mobile-link">How It Works</a>
+      <a href="#pricing" class="nav__mobile-link">Pricing</a>
+      <a href="#compliance" class="nav__mobile-link">Compliance</a>
+      <a href="#demo" class="btn btn--primary btn--block">Book a Demo</a>
+    </div>
+  </header>
+
+
+  <!-- =============================
+       HERO
+  ============================= -->
+  <section class="hero" id="home">
+    <div class="container">
+
+      <div class="hero__badge">
+        <span class="badge__dot"></span>
+        <span>Now live in Toronto &amp; Vancouver</span>
+      </div>
+
+      <h1 class="hero__headline">
+        Your AI Calling Agent<br />
+        <span class="text-accent">Never Misses a Lead</span>
+      </h1>
+
+      <p class="hero__subheadline">
+        MapleCall AI calls every new lead within <strong>60 seconds</strong> — automatically.
+        It speaks <strong>English, French, Mandarin, and Cantonese</strong>,
+        books showings directly into your calendar, and is <strong>100% CRTC compliant</strong>.
+        Built exclusively for Canadian real estate agents.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#demo" class="btn btn--primary btn--lg">
+          Book a Free Demo
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#how-it-works" class="btn btn--ghost btn--lg">See How It Works</a>
+      </div>
+
+      <p class="hero__trust">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1L8.8 5.3H13.5L9.8 7.9L11.1 12.5L7 9.7L2.9 12.5L4.2 7.9L0.5 5.3H5.2L7 1Z" fill="#378ADD"/></svg>
+        No credit card required &nbsp;·&nbsp; Set up in under 24 hours &nbsp;·&nbsp; Cancel anytime
+      </p>
+
+      <!-- Hero visual — mock call interface -->
+      <div class="hero__mockup" aria-hidden="true">
+        <div class="mockup__bar">
+          <div class="mockup__dot mockup__dot--red"></div>
+          <div class="mockup__dot mockup__dot--yellow"></div>
+          <div class="mockup__dot mockup__dot--green"></div>
+          <span class="mockup__title">MapleCall AI — Live Activity</span>
+        </div>
+        <div class="mockup__body">
+          <div class="mockup__feed">
+
+            <div class="feed__item feed__item--success">
+              <div class="feed__icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11 21 3 13 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="#378ADD"/></svg>
+              </div>
+              <div class="feed__content">
+                <span class="feed__label">Call Connected</span>
+                <span class="feed__name">Sarah M. — Toronto, ON</span>
+                <span class="feed__detail">Lead from Realtor.ca · English · 2s ago</span>
+              </div>
+              <span class="feed__status feed__status--live">● LIVE</span>
+            </div>
+
+            <div class="feed__item">
+              <div class="feed__icon feed__icon--booked">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="#378ADD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="feed__content">
+                <span class="feed__label">Showing Booked</span>
+                <span class="feed__name">David L. — Vancouver, BC</span>
+                <span class="feed__detail">普通話 (Mandarin) · Sat June 1, 2:00 PM</span>
+              </div>
+              <span class="feed__status feed__status--booked">Booked</span>
+            </div>
+
+            <div class="feed__item">
+              <div class="feed__icon feed__icon--french">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11 21 3 13 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="#5577aa"/></svg>
+              </div>
+              <div class="feed__content">
+                <span class="feed__label">Voicemail Left</span>
+                <span class="feed__name">Marie-Claire B. — Montréal, QC</span>
+                <span class="feed__detail">Français · Follow-up #2 · 4 min ago</span>
+              </div>
+              <span class="feed__status feed__status--voicemail">VM Left</span>
+            </div>
+
+            <div class="feed__item">
+              <div class="feed__icon feed__icon--cantonese">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11 21 3 13 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="#5577aa"/></svg>
+              </div>
+              <div class="feed__content">
+                <span class="feed__label">Showing Booked</span>
+                <span class="feed__name">Jenny C. — Richmond, BC</span>
+                <span class="feed__detail">廣東話 (Cantonese) · Sun June 2, 11:00 AM</span>
+              </div>
+              <span class="feed__status feed__status--booked">Booked</span>
+            </div>
+
+          </div>
+
+          <div class="mockup__stats">
+            <div class="mockup__stat">
+              <span class="mockup__stat-value">47</span>
+              <span class="mockup__stat-label">Calls Today</span>
+            </div>
+            <div class="mockup__stat">
+              <span class="mockup__stat-value">12</span>
+              <span class="mockup__stat-label">Showings Booked</span>
+            </div>
+            <div class="mockup__stat">
+              <span class="mockup__stat-value">38s</span>
+              <span class="mockup__stat-label">Avg Response</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================
+       STATS BAR
+  ============================= -->
+  <section class="stats" aria-label="Key statistics">
+    <div class="container">
+      <div class="stats__grid">
+
+        <div class="stats__item">
+          <span class="stats__number">85<span class="stats__unit">%</span></span>
+          <span class="stats__label">Lead Pickup Rate</span>
+          <span class="stats__desc">Industry average is 27%</span>
+        </div>
+
+        <div class="stats__divider" aria-hidden="true"></div>
+
+        <div class="stats__item">
+          <span class="stats__number">&lt;60<span class="stats__unit">s</span></span>
+          <span class="stats__label">First Response Time</span>
+          <span class="stats__desc">Leads are 21× more likely to convert</span>
+        </div>
+
+        <div class="stats__divider" aria-hidden="true"></div>
+
+        <div class="stats__item">
+          <span class="stats__number">4</span>
+          <span class="stats__label">Languages Supported</span>
+          <span class="stats__desc">EN · FR · 普通話 · 廣東話</span>
+        </div>
+
+        <div class="stats__divider" aria-hidden="true"></div>
+
+        <div class="stats__item">
+          <span class="stats__number">100<span class="stats__unit">%</span></span>
+          <span class="stats__label">CRTC Compliant</span>
+          <span class="stats__desc">DNCL integrated, legally covered</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================
+       FEATURES
+  ============================= -->
+  <section class="features" id="features">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-label">Features</span>
+        <h2 class="section-title">Everything your calling system needs</h2>
+        <p class="section-desc">Built from the ground up for the Canadian real estate market. No generic tools. No compliance headaches.</p>
+      </div>
+
+      <div class="features__grid">
+
+        <div class="card">
+          <div class="card__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="card__title">60-Second Lead Response</h3>
+          <p class="card__desc">The moment a lead submits a form — from Realtor.ca, Zillow, or your website — MapleCall AI calls them automatically. No delays. No manual work.</p>
+          <span class="card__tag">Instant Automation</span>
+        </div>
+
+        <div class="card">
+          <div class="card__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="card__title">4-Language AI Voice</h3>
+          <p class="card__desc">Natural-sounding AI conversations in English, French, Mandarin, and Cantonese. Detects the lead's language and switches automatically.</p>
+          <span class="card__tag">EN · FR · 普通話 · 廣東話</span>
+        </div>
+
+        <div class="card">
+          <div class="card__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="card__title">CRTC Compliance Built-In</h3>
+          <p class="card__desc">Integrated with Canada's National Do Not Call List. Enforces calling hours by time zone. Handles opt-outs instantly. You're legally covered.</p>
+          <span class="card__tag">Legal Protection</span>
+        </div>
+
+        <div class="card">
+          <div class="card__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="card__title">Automatic Showing Booking</h3>
+          <p class="card__desc">MapleCall AI qualifies the lead, handles objections, and books the showing directly into your calendar — without you lifting a finger.</p>
+          <span class="card__tag">Calendar Sync</span>
+        </div>
+
+        <div class="card">
+          <div class="card__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16M4 10h16M4 14h8m-8 4h4" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="card__title">CRM Integration</h3>
+          <p class="card__desc">Connects to Follow Up Boss, GoHighLevel, and other major CRMs. Every call is logged, every outcome is tracked. Your pipeline stays clean.</p>
+          <span class="card__tag">Follow Up Boss · GoHighLevel</span>
+        </div>
+
+        <div class="card">
+          <div class="card__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="card__title">Live Analytics Dashboard</h3>
+          <p class="card__desc">See every call, every outcome, every booking in real time. Track pickup rates, conversion rates, and ROI from one clean dashboard.</p>
+          <span class="card__tag">Real-Time Data</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================
+       HOW IT WORKS
+  ============================= -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-label">How It Works</span>
+        <h2 class="section-title">Up and running in 3 steps</h2>
+        <p class="section-desc">No technical knowledge required. Most agents go live within 24 hours.</p>
+      </div>
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step__number">01</div>
+          <div class="step__body">
+            <h3 class="step__title">Connect your lead sources</h3>
+            <p class="step__desc">Link MapleCall AI to Realtor.ca, your website forms, or any CRM. We support all major Canadian real estate platforms. Setup takes about 15 minutes.</p>
+            <ul class="step__list">
+              <li>Realtor.ca &amp; MLS feeds</li>
+              <li>Website contact forms</li>
+              <li>Follow Up Boss, GoHighLevel</li>
+              <li>Zapier &amp; webhook support</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step__connector" aria-hidden="true">
+          <svg width="2" height="48" viewBox="0 0 2 48" fill="none"><line x1="1" y1="0" x2="1" y2="48" stroke="#1a3a5c" stroke-width="1.5" stroke-dasharray="4 4"/></svg>
+        </div>
+
+        <div class="step">
+          <div class="step__number">02</div>
+          <div class="step__body">
+            <h3 class="step__title">Customize your AI agent</h3>
+            <p class="step__desc">Set your business name, preferred languages, calling hours, and call script. MapleCall AI handles everything else — including detecting the right language for each lead.</p>
+            <ul class="step__list">
+              <li>Choose languages per market</li>
+              <li>Set your calling schedule</li>
+              <li>Customize your AI's voice &amp; tone</li>
+              <li>Define qualifying questions</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="step__connector" aria-hidden="true">
+          <svg width="2" height="48" viewBox="0 0 2 48" fill="none"><line x1="1" y1="0" x2="1" y2="48" stroke="#1a3a5c" stroke-width="1.5" stroke-dasharray="4 4"/></svg>
+        </div>
+
+        <div class="step">
+          <div class="step__number">03</div>
+          <div class="step__body">
+            <h3 class="step__title">Watch the showings roll in</h3>
+            <p class="step__desc">Every new lead gets a call within 60 seconds. Qualified leads get booked directly into your calendar. You get a notification. That's it.</p>
+            <ul class="step__list">
+              <li>Instant lead notification</li>
+              <li>Automatic calendar booking</li>
+              <li>Full call transcripts</li>
+              <li>CRM sync in real time</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =============================
+       COMPLIANCE SECTION
+  ============================= -->
+  <section class="compliance" id="compliance">
+    <div class="container">
+      <div class="compliance__inner">
+
+        <div class="compliance__text">
+          <span class="section-label">Legal &amp; Compliance</span>
+          <h2 class="section-title">CRTC compliance isn't optional — it's built in</h2>
+          <p class="section-desc" style="text-align:left; max-width:none;">
+            Other AI dialers operate in legal grey zones. MapleCall AI was built from day one around CRTC regulations. Every call follows the law, automatically.
+          </p>
+
+          <ul class="compliance__list">
+            <li>
+              <div class="compliance__check">✓</div>
+              <div>
+                <strong>National DNCL Integration</strong>
+                <span>Automatically scrubs every number against Canada's Do Not Call List before dialing</span>
+              </div>
+            </li>
+            <li>
+              <div class="compliance__check">✓</div>
+              <div>
+                <strong>Enforced Calling Hours</strong>
+                <span>9am–9:30pm weekdays, 10am–6pm weekends, adjusted by local time zone</span>
+              </div>
+            </li>
+            <li>
+              <div class="compliance__check">✓</div>
+              <div>
+                <strong>Instant Opt-Out Handling</strong>
+                <span>Any request to stop calling is processed immediately and permanently</span>
+              </div>
+            </li>
+            <li>
+              <div class="compliance__check">✓</div>
+              <div>
+                <strong>Business Identification</strong>
+                <span>Every call opens with your business name and purpose, as required by law</span>
+              </div>
+            </li>
+            <li>
+              <div class="compliance__check">✓</div>
+              <div>
+                <strong>Call Recording Consent</strong>
+                <span>Consent is obtained and logged at the start of every recorded call</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="compliance__badge-wrap">
+          <div class="compliance__badge">
+            <div class="compliance__badge-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="compliance__badge-title">CRTC Compliant</span>
+            <span class="compliance__badge-sub">Verified · 2025</span>
+          </div>
+          <div class="compliance__badge">
+            <div class="compliance__badge-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span class="compliance__badge-title">DNCL Integrated</span>
+            <span class="compliance__badge-sub">Real-Time Scrubbing</span>
+          </div>
+          <div class="compliance__badge">
+            <div class="compliance__badge-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="#378ADD" stroke-width="1.5"/><path d="M7 11V7a5 5 0 0110 0v4" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <span class="compliance__badge-title">Consent Logged</span>
+            <span class="compliance__badge-sub">Every Call Recorded</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================
+       PRICING
+  ============================= -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-label">Pricing</span>
+        <h2 class="section-title">Simple, transparent pricing</h2>
+        <p class="section-desc">No setup fees. No hidden charges. Cancel anytime. All prices in CAD.</p>
+      </div>
+
+      <div class="pricing__toggle" role="group" aria-label="Billing frequency">
+        <button class="toggle__btn toggle__btn--active" data-period="monthly" id="toggleMonthly">Monthly</button>
+        <button class="toggle__btn" data-period="annual" id="toggleAnnual">
+          Annual
+          <span class="toggle__badge">Save 20%</span>
+        </button>
+      </div>
+
+      <div class="pricing__grid">
+
+        <!-- Starter -->
+        <div class="pricing__card">
+          <div class="pricing__header">
+            <span class="pricing__tier">Starter</span>
+            <div class="pricing__price">
+              <span class="pricing__currency">$</span>
+              <span class="pricing__amount" data-monthly="199" data-annual="159">199</span>
+              <span class="pricing__period">/mo</span>
+            </div>
+            <p class="pricing__tagline">Perfect for solo agents just getting started with AI calling.</p>
+          </div>
+          <ul class="pricing__features">
+            <li><span class="feat__check">✓</span> 500 calls per month</li>
+            <li><span class="feat__check">✓</span> English language only</li>
+            <li><span class="feat__check">✓</span> 1 CRM integration</li>
+            <li><span class="feat__check">✓</span> CRTC &amp; DNCL compliant</li>
+            <li><span class="feat__check">✓</span> Email support</li>
+            <li><span class="feat__check feat__check--muted">—</span> <span class="feat__muted">Multilingual calling</span></li>
+            <li><span class="feat__check feat__check--muted">—</span> <span class="feat__muted">Analytics dashboard</span></li>
+            <li><span class="feat__check feat__check--muted">—</span> <span class="feat__muted">Team accounts</span></li>
+          </ul>
+          <a href="#demo" class="btn btn--ghost btn--block">Get Started</a>
+        </div>
+
+        <!-- Pro — highlighted -->
+        <div class="pricing__card pricing__card--featured">
+          <div class="pricing__popular">Most Popular</div>
+          <div class="pricing__header">
+            <span class="pricing__tier">Pro</span>
+            <div class="pricing__price">
+              <span class="pricing__currency">$</span>
+              <span class="pricing__amount" data-monthly="349" data-annual="279">349</span>
+              <span class="pricing__period">/mo</span>
+            </div>
+            <p class="pricing__tagline">For active agents serious about dominating their market.</p>
+          </div>
+          <ul class="pricing__features">
+            <li><span class="feat__check">✓</span> 2,000 calls per month</li>
+            <li><span class="feat__check">✓</span> <strong>All 4 languages</strong> (EN, FR, 普通話, 廣東話)</li>
+            <li><span class="feat__check">✓</span> All CRM integrations</li>
+            <li><span class="feat__check">✓</span> CRTC &amp; DNCL compliant</li>
+            <li><span class="feat__check">✓</span> Priority email &amp; chat support</li>
+            <li><span class="feat__check">✓</span> Full analytics dashboard</li>
+            <li><span class="feat__check">✓</span> Call transcripts &amp; recordings</li>
+            <li><span class="feat__check feat__check--muted">—</span> <span class="feat__muted">Team accounts</span></li>
+          </ul>
+          <a href="#demo" class="btn btn--primary btn--block">Get Started</a>
+        </div>
+
+        <!-- Team -->
+        <div class="pricing__card">
+          <div class="pricing__header">
+            <span class="pricing__tier">Team</span>
+            <div class="pricing__price">
+              <span class="pricing__currency">$</span>
+              <span class="pricing__amount" data-monthly="599" data-annual="479">599</span>
+              <span class="pricing__period">/mo</span>
+            </div>
+            <p class="pricing__tagline">For brokerages and teams who need scale without limits.</p>
+          </div>
+          <ul class="pricing__features">
+            <li><span class="feat__check">✓</span> Unlimited calls</li>
+            <li><span class="feat__check">✓</span> All 4 languages</li>
+            <li><span class="feat__check">✓</span> All CRM integrations</li>
+            <li><span class="feat__check">✓</span> CRTC &amp; DNCL compliant</li>
+            <li><span class="feat__check">✓</span> Dedicated account manager</li>
+            <li><span class="feat__check">✓</span> Full analytics dashboard</li>
+            <li><span class="feat__check">✓</span> Call transcripts &amp; recordings</li>
+            <li><span class="feat__check">✓</span> Up to 10 agent accounts</li>
+          </ul>
+          <a href="#demo" class="btn btn--ghost btn--block">Get Started</a>
+        </div>
+
+      </div>
+
+      <p class="pricing__note">
+        All plans include a <strong>14-day free trial</strong>. No credit card required. Questions?
+        <a href="mailto:hello@maplecallai.ca" class="pricing__link">Email us</a> — we reply within 1 business day.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- =============================
+       TESTIMONIALS
+  ============================= -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-label">Testimonials</span>
+        <h2 class="section-title">Agents across Canada trust MapleCall AI</h2>
+      </div>
+
+      <div class="testimonials__grid">
+
+        <div class="testimonial__card">
+          <div class="testimonial__stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="testimonial__quote">"I used to lose half my Realtor.ca leads because I couldn't call fast enough. MapleCall AI calls them before I even see the notification. Booked 6 showings in the first week."</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">JK</div>
+            <div>
+              <span class="testimonial__name">James K.</span>
+              <span class="testimonial__role">RE/MAX Agent · Toronto, ON</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial__card">
+          <div class="testimonial__stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p class="testimonial__quote">"The Cantonese and Mandarin support is a game-changer in Richmond. My Chinese-speaking clients are shocked when the AI speaks their language. Conversion went up 40%."</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">LC</div>
+            <div>
+              <span class="testimonial__name">Linda C.</span>
+              <span class="testimonial__role">Royal LePage · Richmond, BC</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial__card">
+          <div class="testimonial__quote testimonial__quote--fr">"Le support en français est excellent. Mes clients au Québec reçoivent un appel professionnel dans leur langue en moins d'une minute. C'est impressionnant."</p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">MB</div>
+            <div>
+              <span class="testimonial__name">Marc B.</span>
+              <span class="testimonial__role">Sutton Québec · Montréal, QC</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================
+       DEMO / CTA SECTION
+  ============================= -->
+  <section class="cta-section" id="demo">
+    <div class="container">
+      <div class="cta__inner">
+
+        <div class="cta__text">
+          <span class="section-label">Get Started Today</span>
+          <h2 class="cta__title">Your leads are calling. Are you?</h2>
+          <p class="cta__desc">Book a free 20-minute demo and see MapleCall AI call a real lead — live — in whichever language you choose. No commitment required.</p>
+
+          <ul class="cta__checklist">
+            <li>✓ Live demo with real AI call</li>
+            <li>✓ We set everything up for you</li>
+            <li>✓ 14-day free trial included</li>
+            <li>✓ Cancel anytime, no questions</li>
+          </ul>
+        </div>
+
+        <div class="cta__form-wrap">
+          <form class="cta__form" id="demoForm" novalidate>
+            <div class="form__group">
+              <label class="form__label" for="firstName">First Name</label>
+              <input class="form__input" type="text" id="firstName" name="firstName" placeholder="James" required autocomplete="given-name" />
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="email">Email Address</label>
+              <input class="form__input" type="email" id="email" name="email" placeholder="james@brokerage.ca" required autocomplete="email" />
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="phone">Phone Number</label>
+              <input class="form__input" type="tel" id="phone" name="phone" placeholder="+1 (416) 555-0100" autocomplete="tel" />
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="market">Your Market</label>
+              <select class="form__input form__select" id="market" name="market">
+                <option value="">Select your city...</option>
+                <option value="toronto">Toronto, ON</option>
+                <option value="vancouver">Vancouver, BC</option>
+                <option value="montreal">Montréal, QC</option>
+                <option value="ottawa">Ottawa, ON</option>
+                <option value="calgary">Calgary, AB</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn--primary btn--block btn--lg">
+              Book My Free Demo
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <p class="form__privacy">By submitting, you agree to our <a href="/privacy" class="form__link">Privacy Policy</a>. We'll never spam you.</p>
+          </form>
+          <div class="cta__form-success" id="formSuccess" aria-live="polite">
+            <div class="success__icon">✓</div>
+            <h3>You're booked!</h3>
+            <p>We'll reach out within 1 business day to confirm your demo time. Talk soon.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =============================
+       FOOTER
+  ============================= -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer__top">
+
+        <!-- Brand column -->
+        <div class="footer__brand">
+          <a href="/" class="nav__logo" aria-label="MapleCall AI Home">
+            <div class="nav__logo-icon">M</div>
+            <span class="nav__logo-text">
+              <span class="nav__logo-maple">Maple</span><span class="nav__logo-call">Call</span> <span class="nav__logo-ai">AI</span>
+            </span>
+          </a>
+          <p class="footer__tagline">AI-powered calling for Canadian real estate agents. Follow up faster, close more deals.</p>
+          <p class="footer__canada">🍁 Proudly Canadian. Built for Canada.</p>
+        </div>
+
+        <!-- Links columns -->
+        <div class="footer__links">
+          <div class="footer__col">
+            <span class="footer__col-title">Product</span>
+            <a href="#features" class="footer__link">Features</a>
+            <a href="#how-it-works" class="footer__link">How It Works</a>
+            <a href="#pricing" class="footer__link">Pricing</a>
+            <a href="#demo" class="footer__link">Book a Demo</a>
+          </div>
+          <div class="footer__col">
+            <span class="footer__col-title">Compliance</span>
+            <a href="#compliance" class="footer__link">CRTC Overview</a>
+            <a href="/dncl" class="footer__link">DNCL Policy</a>
+            <a href="/privacy" class="footer__link">Privacy Policy</a>
+            <a href="/terms" class="footer__link">Terms of Service</a>
+          </div>
+          <div class="footer__col">
+            <span class="footer__col-title">Company</span>
+            <a href="/about" class="footer__link">About Us</a>
+            <a href="mailto:hello@maplecallai.ca" class="footer__link">Contact</a>
+            <a href="/blog" class="footer__link">Blog</a>
+            <a href="/careers" class="footer__link">Careers</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 MapleCall AI Inc. All rights reserved. Toronto, Canada.</p>
+        <div class="footer__languages">
+          <span class="footer__lang footer__lang--active">EN</span>
+          <span class="footer__lang">FR</span>
+          <span class="footer__lang">普通話</span>
+          <span class="footer__lang">廣東話</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -43,8 +43,8 @@
 
       <!-- Nav CTA -->
       <div class="nav__actions">
-        <a href="#pricing" class="btn btn--ghost btn--sm">Log In</a>
-        <a href="#demo" class="btn btn--primary btn--sm">Book a Demo</a>
+        <a href="login.html"                class="btn btn--ghost btn--sm">Log In</a>
+        <a href="get-started.html?plan=pro" class="btn btn--primary btn--sm">Sign Up Free</a>
       </div>
 
       <!-- Hamburger button — always visible -->
@@ -70,15 +70,18 @@
 
         <!-- Nav links -->
         <nav class="nav__panel-links">
-          <a href="#features"    class="nav__panel-link">Features    <span class="nav__arrow">→</span></a>
+          <a href="#features"     class="nav__panel-link">Features     <span class="nav__arrow">→</span></a>
           <a href="#how-it-works" class="nav__panel-link">How It Works <span class="nav__arrow">→</span></a>
-          <a href="#why-us"      class="nav__panel-link nav__panel-link--active">Why Us      <span class="nav__arrow">→</span></a>
-          <a href="pricing.html"  class="nav__panel-link">Pricing     <span class="nav__arrow">→</span></a>
-          <a href="#compliance"  class="nav__panel-link">Compliance  <span class="nav__arrow">→</span></a>
+          <a href="#why-us"       class="nav__panel-link">Why Us       <span class="nav__arrow">→</span></a>
+          <a href="pricing.html"  class="nav__panel-link">Pricing      <span class="nav__arrow">→</span></a>
+          <a href="#compliance"   class="nav__panel-link">Compliance   <span class="nav__arrow">→</span></a>
         </nav>
 
-        <!-- CTA -->
-        <a href="#demo" class="btn btn--primary btn--block nav__panel-cta">Book a Demo</a>
+        <!-- Auth CTAs -->
+        <div class="nav__panel-auth">
+          <a href="login.html"                class="btn btn--ghost btn--block nav__panel-link-btn">Log In</a>
+          <a href="get-started.html?plan=pro" class="btn btn--primary btn--block nav__panel-cta">Sign Up Free →</a>
+        </div>
 
       </div>
     </div>
@@ -109,12 +112,16 @@
       </p>
 
       <div class="hero__actions">
-        <a href="#demo" class="btn btn--primary btn--lg">
-          Book a Free Demo
+        <a href="get-started.html?plan=pro" class="btn btn--primary btn--lg">
+          Start Free Trial
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <a href="#how-it-works" class="btn btn--ghost btn--lg">See How It Works</a>
       </div>
+
+      <p class="hero__login-prompt">
+        Already have an account? <a href="login.html">Log in →</a>
+      </p>
 
       <p class="hero__trust">
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1L8.8 5.3H13.5L9.8 7.9L11.1 12.5L7 9.7L2.9 12.5L4.2 7.9L0.5 5.3H5.2L7 1Z" fill="#378ADD"/></svg>

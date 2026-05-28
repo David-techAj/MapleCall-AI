@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sign in to your MapleCall AI account." />
+  <meta name="theme-color" content="#060f1a" />
+  <title>Log In — MapleCall AI</title>
+  <link rel="stylesheet" href="styles/main.css?v=2" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <style>
+    /* ── Page shell ── */
+    .login-page {
+      min-height: 100vh;
+      background: #060f1a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 24px 64px;
+    }
+
+    /* ── Logo ── */
+    .login-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      margin-bottom: 36px;
+    }
+    .login-logo__icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      background: #378ADD;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .login-logo__text {
+      font-size: 17px;
+      font-weight: 500;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+    .login-logo__text span { color: #378ADD; }
+
+    /* ── Card ── */
+    .login-card {
+      width: 100%;
+      max-width: 420px;
+      background: #0d1a27;
+      border: 0.5px solid #1a3a5c;
+      border-radius: 16px;
+      padding: 36px 32px 32px;
+    }
+
+    /* ── Headings ── */
+    .login-heading {
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+    .login-sub {
+      font-size: 14px;
+      color: #5577aa;
+      text-align: center;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    /* ── Google button ── */
+    .btn-google {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 11px 16px;
+      background: #ffffff;
+      color: #1a1a1a;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.15s, box-shadow 0.15s;
+      text-decoration: none;
+    }
+    .btn-google:hover { background: #f0f0f0; box-shadow: 0 2px 8px rgba(0,0,0,0.18); }
+    .btn-google:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    /* ── Divider ── */
+    .login-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 22px 0;
+    }
+    .login-divider::before,
+    .login-divider::after {
+      content: '';
+      flex: 1;
+      height: 0.5px;
+      background: #1a3a5c;
+    }
+    .login-divider span {
+      font-size: 12px;
+      color: #3a5570;
+      white-space: nowrap;
+    }
+
+    /* ── Tab switcher ── */
+    .login-tabs {
+      display: flex;
+      background: #091420;
+      border: 0.5px solid #1a3a5c;
+      border-radius: 8px;
+      padding: 3px;
+      margin-bottom: 22px;
+      gap: 2px;
+    }
+    .login-tab {
+      flex: 1;
+      padding: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      font-family: inherit;
+      color: #5577aa;
+      background: transparent;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .login-tab--active {
+      background: #378ADD;
+      color: #ffffff;
+    }
+
+    /* ── Form fields ── */
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .login-field {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .login-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #3a5570;
+    }
+    .login-input {
+      background: #091420;
+      border: 0.5px solid #1a3a5c;
+      border-radius: 8px;
+      color: #ffffff;
+      font-size: 14px;
+      font-family: inherit;
+      padding: 10px 14px;
+      outline: none;
+      width: 100%;
+      box-sizing: border-box;
+      transition: border-color 0.18s;
+    }
+    .login-input::placeholder { color: #3a5570; }
+    .login-input:focus { border-color: #378ADD; }
+    .login-input.error { border-color: #ef4444; }
+
+    /* Forgot password row */
+    .login-forgot-row {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .login-forgot {
+      font-size: 12px;
+      color: #5577aa;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.15s;
+    }
+    .login-forgot:hover { color: #ffffff; }
+
+    /* ── Submit / action buttons ── */
+    .btn-login {
+      width: 100%;
+      padding: 12px 16px;
+      background: #378ADD;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.15s;
+      margin-top: 4px;
+    }
+    .btn-login:hover:not(:disabled) { background: #2d72c0; }
+    .btn-login:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .btn-login--ghost {
+      background: transparent;
+      border: 0.5px solid #1a3a5c;
+      color: #5577aa;
+    }
+    .btn-login--ghost:hover:not(:disabled) { background: #0d1a27; color: #ffffff; border-color: #378ADD; }
+
+    /* ── OTP field (hidden until code sent) ── */
+    .otp-group { display: none; flex-direction: column; gap: 14px; }
+    .otp-group.visible { display: flex; }
+
+    /* ── Error / success messages ── */
+    .login-error {
+      font-size: 12px;
+      color: #ef4444;
+      background: rgba(239, 68, 68, 0.08);
+      border: 0.5px solid rgba(239, 68, 68, 0.2);
+      border-radius: 6px;
+      padding: 10px 14px;
+      line-height: 1.6;
+      display: none;
+    }
+    .login-error.visible { display: block; }
+
+    /* ── Bottom link ── */
+    .login-bottom {
+      margin-top: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: #5577aa;
+    }
+    .login-bottom a {
+      color: #378ADD;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .login-bottom a:hover { color: #4a96e8; }
+
+    @media (max-width: 480px) {
+      .login-card { padding: 28px 20px 24px; }
+    }
+  </style>
+</head>
+<body class="login-page">
+
+  <!-- Logo -->
+  <a href="index.html" class="login-logo" aria-label="MapleCall AI Home">
+    <div class="login-logo__icon">M</div>
+    <span class="login-logo__text">
+      <span>Maple</span>Call <span>AI</span>
+    </span>
+  </a>
+
+  <!-- Card -->
+  <div class="login-card">
+
+    <h1 class="login-heading">Welcome back</h1>
+    <p class="login-sub">Sign in to your MapleCall AI account</p>
+
+    <!-- Google Sign In -->
+    <button class="btn-google" id="btnGoogle">
+      <!-- Google "G" logo -->
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+        <path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.615z"/>
+        <path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/>
+        <path fill="#FBBC05" d="M3.964 10.707A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.707V4.961H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.039l3.007-2.332z"/>
+        <path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.961L3.964 7.293C4.672 5.163 6.656 3.58 9 3.58z"/>
+      </svg>
+      Continue with Google
+    </button>
+
+    <!-- Divider -->
+    <div class="login-divider"><span>or continue with email</span></div>
+
+    <!-- Tab switcher -->
+    <div class="login-tabs" role="tablist">
+      <button class="login-tab login-tab--active" id="tabEmail" role="tab" aria-selected="true" aria-controls="panelEmail">Email</button>
+      <button class="login-tab" id="tabPhone" role="tab" aria-selected="false" aria-controls="panelPhone">Phone</button>
+    </div>
+
+    <!-- ── EMAIL PANEL ── -->
+    <div id="panelEmail" role="tabpanel">
+      <form class="login-form" id="formEmail" novalidate>
+
+        <div class="login-field">
+          <label class="login-label" for="inputEmail">Email Address</label>
+          <input class="login-input" type="email" id="inputEmail" name="email"
+                 placeholder="james@brokerage.ca" autocomplete="email" required />
+        </div>
+
+        <div class="login-field">
+          <label class="login-label" for="inputPassword">Password</label>
+          <input class="login-input" type="password" id="inputPassword" name="password"
+                 placeholder="••••••••" autocomplete="current-password" required />
+        </div>
+
+        <div class="login-forgot-row">
+          <a href="#" class="login-forgot" id="linkForgot">Forgot password?</a>
+        </div>
+
+        <div class="login-error" id="emailError"></div>
+
+        <button type="submit" class="btn-login" id="btnEmailSignIn">Sign In</button>
+
+      </form>
+    </div>
+
+    <!-- ── PHONE PANEL ── -->
+    <div id="panelPhone" role="tabpanel" style="display:none;">
+      <form class="login-form" id="formPhone" novalidate>
+
+        <div class="login-field">
+          <label class="login-label" for="inputPhone">Phone Number</label>
+          <input class="login-input" type="tel" id="inputPhone" name="phone"
+                 placeholder="+1 647 555 0100" autocomplete="tel" required />
+        </div>
+
+        <div class="login-error" id="phoneError"></div>
+
+        <button type="button" class="btn-login" id="btnSendCode">Send Code</button>
+
+        <!-- OTP group — shown after code is sent -->
+        <div class="otp-group" id="otpGroup">
+          <div class="login-field">
+            <label class="login-label" for="inputOtp">Verification Code</label>
+            <input class="login-input" type="text" id="inputOtp" name="otp"
+                   placeholder="123456" autocomplete="one-time-code" inputmode="numeric"
+                   maxlength="6" />
+          </div>
+          <button type="button" class="btn-login" id="btnVerifyCode">Verify Code</button>
+          <button type="button" class="btn-login btn-login--ghost" id="btnResend">Resend Code</button>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Bottom link -->
+  <p class="login-bottom">
+    Don't have an account?
+    <a href="get-started.html?plan=pro">Start your free trial →</a>
+  </p>
+
+  <!-- Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script>
+    'use strict';
+
+    // ── Supabase client ──────────────────────────────────────────
+    const SUPABASE_URL     = 'https://pgiqkxtqnollleqmizea.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBnaXFreHRxbm9sbGxlcW1pemVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk5MjgzODEsImV4cCI6MjA5NTUwNDM4MX0.7zHAQ1jyc77FigGeL0Yt_BKLcb22lUKM83PYc-pD5pE';
+    const DASHBOARD        = 'dashboard.html';
+
+    const { createClient } = supabase;
+    const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // ── Helpers ──────────────────────────────────────────────────
+    function showError(el, msg) {
+      el.textContent = msg;
+      el.classList.add('visible');
+    }
+    function clearError(el) {
+      el.textContent = '';
+      el.classList.remove('visible');
+    }
+    function setLoading(btn, loading, label) {
+      btn.disabled = loading;
+      btn.textContent = loading ? 'Please wait…' : label;
+    }
+
+    // ── Tab switcher ─────────────────────────────────────────────
+    const tabEmail  = document.getElementById('tabEmail');
+    const tabPhone  = document.getElementById('tabPhone');
+    const panelEmail = document.getElementById('panelEmail');
+    const panelPhone = document.getElementById('panelPhone');
+
+    tabEmail.addEventListener('click', function () {
+      tabEmail.classList.add('login-tab--active');
+      tabPhone.classList.remove('login-tab--active');
+      tabEmail.setAttribute('aria-selected', 'true');
+      tabPhone.setAttribute('aria-selected', 'false');
+      panelEmail.style.display = '';
+      panelPhone.style.display = 'none';
+    });
+
+    tabPhone.addEventListener('click', function () {
+      tabPhone.classList.add('login-tab--active');
+      tabEmail.classList.remove('login-tab--active');
+      tabPhone.setAttribute('aria-selected', 'true');
+      tabEmail.setAttribute('aria-selected', 'false');
+      panelPhone.style.display = '';
+      panelEmail.style.display = 'none';
+    });
+
+    // ── Google OAuth ─────────────────────────────────────────────
+    document.getElementById('btnGoogle').addEventListener('click', async function () {
+      setLoading(this, true, 'Continue with Google');
+      const { error } = await sb.auth.signInWithOAuth({
+        provider: 'google',
+        options: { redirectTo: 'https://maple-call-ai-3udx.vercel.app/dashboard.html' }
+      });
+      if (error) {
+        setLoading(this, false, 'Continue with Google');
+        alert(error.message);
+      }
+      // On success Supabase redirects — no further action needed
+    });
+
+    // ── Email sign in ────────────────────────────────────────────
+    const emailError = document.getElementById('emailError');
+
+    document.getElementById('formEmail').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      clearError(emailError);
+
+      const email    = document.getElementById('inputEmail').value.trim();
+      const password = document.getElementById('inputPassword').value;
+      const btn      = document.getElementById('btnEmailSignIn');
+
+      if (!email || !password) {
+        showError(emailError, 'Please enter your email and password.');
+        return;
+      }
+
+      setLoading(btn, true, 'Sign In');
+      const { error } = await sb.auth.signInWithPassword({ email, password });
+      setLoading(btn, false, 'Sign In');
+
+      if (error) {
+        showError(emailError, error.message);
+      } else {
+        window.location.href = DASHBOARD;
+      }
+    });
+
+    // ── Forgot password ──────────────────────────────────────────
+    document.getElementById('linkForgot').addEventListener('click', async function (e) {
+      e.preventDefault();
+      const email = document.getElementById('inputEmail').value.trim();
+      if (!email) {
+        showError(emailError, 'Enter your email address first, then click Forgot password.');
+        return;
+      }
+      clearError(emailError);
+      const { error } = await sb.auth.resetPasswordForEmail(email, {
+        redirectTo: window.location.origin + '/login.html'
+      });
+      if (error) {
+        showError(emailError, error.message);
+      } else {
+        showError(emailError, '✓ Password reset email sent — check your inbox.');
+        emailError.style.color = '#22c55e';
+      }
+    });
+
+    // ── Phone — send OTP ─────────────────────────────────────────
+    const phoneError = document.getElementById('phoneError');
+    const otpGroup   = document.getElementById('otpGroup');
+    let   lastPhone  = '';
+
+    async function sendOtp() {
+      const phone = document.getElementById('inputPhone').value.trim();
+      if (!phone) {
+        showError(phoneError, 'Please enter your phone number.');
+        return;
+      }
+      clearError(phoneError);
+      const btn = document.getElementById('btnSendCode');
+      setLoading(btn, true, 'Send Code');
+
+      const { error } = await sb.auth.signInWithOtp({ phone });
+      setLoading(btn, false, 'Send Code');
+
+      if (error) {
+        showError(phoneError, error.message);
+      } else {
+        lastPhone = phone;
+        otpGroup.classList.add('visible');
+        document.getElementById('inputOtp').focus();
+      }
+    }
+
+    document.getElementById('btnSendCode').addEventListener('click', sendOtp);
+    document.getElementById('btnResend').addEventListener('click', sendOtp);
+
+    // ── Phone — verify OTP ───────────────────────────────────────
+    document.getElementById('btnVerifyCode').addEventListener('click', async function () {
+      const token = document.getElementById('inputOtp').value.trim();
+      if (!token) {
+        showError(phoneError, 'Please enter the verification code.');
+        return;
+      }
+      clearError(phoneError);
+      setLoading(this, true, 'Verify Code');
+
+      const { error } = await sb.auth.verifyOtp({
+        phone: lastPhone,
+        token,
+        type: 'sms'
+      });
+      setLoading(this, false, 'Verify Code');
+
+      if (error) {
+        showError(phoneError, error.message);
+      } else {
+        window.location.href = DASHBOARD;
+      }
+    });
+  </script>
+
+</body>
+</html>

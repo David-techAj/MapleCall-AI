@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — MapleCall AI</title>
+  <link rel="stylesheet" href="styles/main.css?v=2" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <style>
+    .dash-page {
+      min-height: 100vh;
+      background: #060f1a;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Top nav ── */
+    .dash-nav {
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      background: rgba(6, 15, 26, 0.95);
+      backdrop-filter: blur(16px);
+      border-bottom: 0.5px solid #0d1f30;
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+    .dash-nav__inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .dash-nav__right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .dash-nav__user {
+      font-size: 13px;
+      color: #5577aa;
+    }
+
+    /* ── Main content ── */
+    .dash-main {
+      flex: 1;
+      padding: 56px 24px 80px;
+    }
+    .dash-container {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ── Welcome card ── */
+    .dash-card {
+      background: #0d1a27;
+      border: 0.5px solid #1a3a5c;
+      border-radius: 14px;
+      padding: 32px 28px;
+    }
+
+    .dash-welcome {
+      font-size: clamp(22px, 4vw, 30px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .dash-welcome span { color: #378ADD; }
+
+    .dash-status {
+      font-size: 14px;
+      color: #5577aa;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    /* ── Plan badge ── */
+    .dash-plan {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(55, 138, 221, 0.1);
+      border: 0.5px solid rgba(55, 138, 221, 0.25);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #378ADD;
+      margin-bottom: 28px;
+    }
+    .dash-plan__dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #378ADD;
+      flex-shrink: 0;
+    }
+
+    /* ── Action buttons ── */
+    .dash-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* ── Setup card ── */
+    .dash-setup {
+      background: #091420;
+      border: 0.5px solid #0d1f30;
+      border-radius: 12px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .dash-setup__icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(55, 138, 221, 0.1);
+      border: 0.5px solid rgba(55, 138, 221, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .dash-setup__text h3 {
+      font-size: 14px;
+      font-weight: 500;
+      color: #ffffff;
+      margin-bottom: 3px;
+    }
+    .dash-setup__text p {
+      font-size: 13px;
+      color: #5577aa;
+      line-height: 1.5;
+    }
+
+    /* Logout button */
+    .btn-logout {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 18px;
+      background: transparent;
+      border: 0.5px solid #1a3a5c;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      font-family: inherit;
+      color: #5577aa;
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .btn-logout:hover { border-color: #ef4444; color: #ef4444; }
+
+    /* ── Footer ── */
+    .dash-footer {
+      text-align: center;
+      padding: 24px;
+      border-top: 0.5px solid #0d1f30;
+      font-size: 12px;
+      color: #3a5570;
+    }
+    .dash-footer a { color: #5577aa; }
+    .dash-footer a:hover { color: #ffffff; }
+
+    @media (max-width: 480px) {
+      .dash-card { padding: 24px 20px; }
+      .dash-actions { flex-direction: column; }
+      .dash-actions .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body class="dash-page">
+
+  <!-- Navbar -->
+  <header class="dash-nav">
+    <div class="dash-nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="MapleCall AI Home">
+        <div class="nav__logo-icon">M</div>
+        <span class="nav__logo-text">
+          <span class="nav__logo-maple">Maple</span><span class="nav__logo-call">Call</span> <span class="nav__logo-ai">AI</span>
+        </span>
+      </a>
+      <div class="dash-nav__right">
+        <span class="dash-nav__user" id="navUserEmail"></span>
+        <button class="btn-logout" id="btnLogout">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Log Out
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="dash-main">
+    <div class="dash-container">
+
+      <!-- Welcome card -->
+      <div class="dash-card">
+        <h1 class="dash-welcome">Welcome back, <span id="userName">there</span> 👋</h1>
+        <p class="dash-status">Your MapleCall AI dashboard is being set up. Our team will reach out within 24 hours to complete your onboarding.</p>
+
+        <div class="dash-plan" id="planBadge">
+          <span class="dash-plan__dot"></span>
+          <span id="planName">Loading plan…</span>
+        </div>
+
+        <div class="dash-actions">
+          <a href="mailto:hello@maplecallai.ca" class="btn btn--primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Contact Support
+          </a>
+          <a href="pricing.html" class="btn btn--ghost">View Plans</a>
+        </div>
+      </div>
+
+      <!-- Setup status card -->
+      <div class="dash-setup">
+        <div class="dash-setup__icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#378ADD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="dash-setup__text">
+          <h3>Onboarding in progress</h3>
+          <p>We typically go live within 24 hours. You'll receive a confirmation email at the address you signed up with.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="dash-footer">
+    <p>© 2025 MapleCall AI Inc. · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · 🍁 Toronto, Canada</p>
+  </footer>
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    'use strict';
+
+    const SUPABASE_URL      = 'https://pgiqkxtqnollleqmizea.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBnaXFreHRxbm9sbGxlcW1pemVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk5MjgzODEsImV4cCI6MjA5NTUwNDM4MX0.7zHAQ1jyc77FigGeL0Yt_BKLcb22lUKM83PYc-pD5pE';
+    const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    // ── Plan labels ──────────────────────────────────────────────
+    const PLAN_LABELS = {
+      starter: 'Starter Plan · $199/mo',
+      pro:     'Pro Plan · $349/mo',
+      team:    'Team Plan · $599/mo',
+    };
+
+    // ── Load session ─────────────────────────────────────────────
+    (async function init() {
+      const { data: { session } } = await sb.auth.getSession();
+
+      // Not logged in — send to login
+      if (!session) {
+        window.location.href = 'login.html';
+        return;
+      }
+
+      const user = session.user;
+
+      // Name: prefer full_name from metadata, fall back to email prefix
+      const fullName = user.user_metadata?.full_name
+                    || user.user_metadata?.name
+                    || user.email?.split('@')[0]
+                    || 'there';
+
+      document.getElementById('userName').textContent = fullName;
+      document.getElementById('navUserEmail').textContent = user.email || '';
+
+      // Plan: read from user metadata if set, default to pro
+      const planKey = (user.user_metadata?.plan || 'pro').toLowerCase();
+      const planLabel = PLAN_LABELS[planKey] || PLAN_LABELS.pro;
+      document.getElementById('planName').textContent = planLabel;
+    })();
+
+    // ── Log out ──────────────────────────────────────────────────
+    document.getElementById('btnLogout').addEventListener('click', async function () {
+      this.textContent = 'Signing out…';
+      this.disabled = true;
+      await sb.auth.signOut();
+      window.location.href = 'index.html';
+    });
+  </script>
+
+</body>
+</html>

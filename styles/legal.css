@@ -1,0 +1,62 @@
+/* =============================================================
+   MapleCall AI — Legal / About pages
+   ============================================================= */
+
+.legal-page { min-height: 100vh; background: #060f1a; }
+
+.legal-main  { padding: 56px 24px 80px; }
+
+.legal-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.legal-header  { margin-bottom: 40px; }
+
+.legal-title {
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  margin: 10px 0 8px;
+}
+
+.legal-meta {
+  font-size: 13px;
+  color: #3a5570;
+}
+
+/* Body prose */
+.legal-body h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 32px 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 0.5px solid #0d1f30;
+}
+
+.legal-body p {
+  font-size: 14px;
+  color: #5577aa;
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+.legal-body ul {
+  padding-left: 20px;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legal-body li {
+  font-size: 14px;
+  color: #5577aa;
+  line-height: 1.65;
+}
+
+.legal-body a { color: #378ADD; text-decoration: underline; }
+.legal-body a:hover { color: #4a96e8; }
+.legal-body strong { color: #7a9bbf; font-weight: 500; }

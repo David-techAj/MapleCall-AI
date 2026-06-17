@@ -1,5 +1,5 @@
 /* =============================================================
-   MapleCall AI — Main JavaScript
+   NorthReach — Main JavaScript
    Handles: nav scroll, mobile menu, pricing toggle, form submit
    ============================================================= */
 

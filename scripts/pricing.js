@@ -1,5 +1,5 @@
 /* =============================================================
-   MapleCall AI — Pricing Page Script
+   NorthReach — Pricing Page Script
    Handles: nav hamburger, monthly/annual toggle with animation
    ============================================================= */
 

@@ -1,14 +1,14 @@
-# MapleCall AI — Website
+# NorthReach — Website
 
 AI-powered outbound dialer for Canadian real estate agents.
 
 ## Stack
 - Pure HTML + CSS + Vanilla JS (no frameworks)
-- Deploy to Vercel at `maplecallai.ca`
+- Deploy to Vercel at `northreachhq.com`
 
 ## Structure
 ```
-MapleCall AI/
+NorthReach/
 ├── index.html          # Landing page
 ├── styles/main.css     # All styles
 ├── scripts/main.js     # Interactions
@@ -39,4 +39,4 @@ python3 -m http.server 3000
 ```
 
 ## Deploy
-Push to GitHub → import in Vercel → set domain `maplecallai.ca`
+Push to GitHub → import in Vercel → set domain `northreachhq.com`

@@ -1,8 +1,8 @@
-# MapleCall AI — Project Instructions for Claude
+# NorthReach — Project Instructions for Claude
 
 ## What This Project Is
 
-MapleCall AI is a Canadian SaaS product — an AI-powered outbound dialer built specifically for Canadian real estate agents. It follows up on leads automatically, books showings, and is fully CRTC-compliant. It supports four languages: English, French, Mandarin, and Cantonese.
+NorthReach is a Canadian SaaS product — an AI-powered outbound dialer built specifically for Canadian real estate agents. It follows up on leads automatically, books showings, and is fully CRTC-compliant. It supports four languages: English, French, Mandarin, and Cantonese.
 
 This is a real business being built by the founder. Every decision should be practical, clean, and production-ready.
 
@@ -11,7 +11,7 @@ This is a real business being built by the founder. Every decision should be pra
 ## The Stack
 
 - **Frontend (website):** HTML + CSS + vanilla JavaScript
-- **Deployment:** Vercel (maplecallai.ca)
+- **Deployment:** Vercel (northreachhq.com)
 - **AI calling engine:** Bland.ai or Retell AI (API integration)
 - **CRM / dashboard:** GoHighLevel (white-labeled)
 - **Canadian phone numbers:** Twilio
@@ -24,7 +24,7 @@ No frameworks unless absolutely necessary. Keep it simple, fast, and easy to mai
 
 ## Brand
 
-**Product name:** MapleCall AI
+**Product name:** NorthReach
 
 **Colors:**
 - Background: `#060f1a` (dark navy)
@@ -99,7 +99,7 @@ The website is a single-page marketing site with these sections in order:
 ## File Structure
 
 ```
-maplecall-ai/
+northreach/
 ├── index.html          # Main landing page
 ├── styles/
 │   └── main.css        # All styles

@@ -1,5 +1,5 @@
 /* =============================================================
-   MapleCall AI — Get Started Page Script
+   NorthReach — Get Started Page Script
    Reads ?plan= URL param, populates plan card, handles form
    ============================================================= */
 

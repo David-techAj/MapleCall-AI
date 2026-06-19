@@ -367,7 +367,9 @@
     // ── Supabase client ──────────────────────────────────────────
     const SUPABASE_URL     = 'https://pgiqkxtqnollleqmizea.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBnaXFreHRxbm9sbGxlcW1pemVhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk5MjgzODEsImV4cCI6MjA5NTUwNDM4MX0.7zHAQ1jyc77FigGeL0Yt_BKLcb22lUKM83PYc-pD5pE';
-    const DASHBOARD        = 'https://maple-call-ai-3udx.vercel.app/dashboard.html';
+    // Always redirect to whatever domain this page is actually served from
+    // (northreachhq.com in production). Never hardcode a domain again.
+    const DASHBOARD        = window.location.origin + '/dashboard.html';
 
     const { createClient } = supabase;
     const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -415,7 +417,7 @@
       setLoading(this, true, 'Continue with Google');
       const { error } = await sb.auth.signInWithOAuth({
         provider: 'google',
-        options: { redirectTo: 'https://maple-call-ai-3udx.vercel.app/dashboard.html' }
+        options: { redirectTo: window.location.origin + '/dashboard.html' }
       });
       if (error) {
         setLoading(this, false, 'Continue with Google');
@@ -461,7 +463,7 @@
       }
       clearError(emailError);
       const { error } = await sb.auth.resetPasswordForEmail(email, {
-        redirectTo: 'https://maple-call-ai-3udx.vercel.app/login.html'
+        redirectTo: window.location.origin + '/login.html'
       });
       if (error) {
         showError(emailError, error.message);

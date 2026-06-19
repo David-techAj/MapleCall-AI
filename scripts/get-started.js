@@ -9,7 +9,7 @@
 var PLANS = {
   starter: {
     name:     'Starter',
-    tag:      'Perfect for solo agents',
+    tag:      'Perfect for small teams',
     price:    '199',
     badge:    'Starter Plan',
     pro:      false,
@@ -25,7 +25,7 @@ var PLANS = {
   },
   pro: {
     name:     'Pro',
-    tag:      'Most popular for active agents',
+    tag:      'Most popular for growing teams',
     price:    '349',
     badge:    'Pro Plan',
     pro:      true,
@@ -41,7 +41,7 @@ var PLANS = {
   },
   team: {
     name:     'Team',
-    tag:      'Built for brokerages & teams',
+    tag:      'Built for larger teams',
     price:    '599',
     badge:    'Team Plan',
     pro:      false,

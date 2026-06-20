@@ -16,6 +16,7 @@
 const ALLOWED_ORIGINS = [
   "https://app.northreachhq.com",
   "https://northreachhq.com",
+  "https://app.gohighlevel.com",
 ];
 
 const MODEL = "claude-haiku-4-5-20251001"; // fast + cheap ($1/$5 per M tokens)
